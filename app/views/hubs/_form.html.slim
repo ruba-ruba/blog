@@ -1,0 +1,9 @@
+= simple_form_for @hub do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :title
+    = f.input :description
+    = f.input :published, :collection => [true, false], :as => :radio_buttons
+    = f.collection_select :parent_id, Hub.order(:title), :id, :title, include_blank: true
+  .form-actions
+    = f.button :submit

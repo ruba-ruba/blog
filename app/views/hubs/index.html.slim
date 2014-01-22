@@ -1,0 +1,20 @@
+h1 Listing hubs
+
+table
+  tr
+    th
+    th
+    th
+    th
+
+  - @hubs.each do |hub|
+    tr
+      td = hub.title
+      td = hub.ancestry
+      td = link_to 'Show', hub
+      td = link_to 'Edit', edit_hub_path(hub)
+      td = link_to 'Destroy', hub, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Hub', new_hub_path
