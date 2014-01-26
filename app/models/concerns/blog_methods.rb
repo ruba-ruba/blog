@@ -6,15 +6,14 @@ module BlogMethods
   end
 
   module ClassMethods
-    def find(param)
-      #param.to_i == 0 ? find_by_title(param.gsub("-", " ")) : super
-      find_by_title(param.gsub("-", " "))
-    end 
+    # def find(param)
+    #   param.to_i == 0 ? find_by_title(param.gsub("-", " ")) : super
+    # end 
   end
   
   module InstanceMethods
     def to_param
-      title.gsub(/\s/,'-')
+      "#{id}-#{title.gsub(/\s/,'-')}"
     end
   end
 

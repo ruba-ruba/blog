@@ -11,7 +11,7 @@ p
   = @post.published
 p
   strong Content:
-  = @post.content
+  = @post.content.html_safe
 p
   strong Type:
   = @post.type

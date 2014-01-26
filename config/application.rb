@@ -14,6 +14,9 @@ Bundler.require(:default, Rails.env)
 module Blog
   class Application < Rails::Application
 
+    # CKEditor 
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       g.test_framework :rspec, fixture: true

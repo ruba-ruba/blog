@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126080411) do
+ActiveRecord::Schema.define(version: 20140126155257) do
+
+  create_table "categorizations", force: true do |t|
+    t.integer "hub_id"
+    t.integer "post_id"
+  end
+
+  add_index "categorizations", ["hub_id"], name: "index_categorizations_on_hub_id", using: :btree
+  add_index "categorizations", ["post_id"], name: "index_categorizations_on_post_id", using: :btree
+
+  create_table "ckeditor_assets", force: true do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "hubs", force: true do |t|
     t.integer  "user_id"

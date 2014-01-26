@@ -22,6 +22,8 @@ gem 'devise'
 gem "cancan"
 gem "rolify"
 gem 'ancestry'
+gem "ckeditor"
+
 
 #debug
 gem 'better_errors'

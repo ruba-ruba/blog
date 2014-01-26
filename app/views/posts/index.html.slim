@@ -6,7 +6,7 @@ table
     th Title
     th Published
     th Content
-    th Type
+    th Hubs
     th
     th
     th
@@ -16,8 +16,10 @@ table
       td = post.user_id
       td = post.title
       td = post.published
-      td = post.content
-      td = post.type
+      td = post.content.html_safe
+      td 
+        - post.hubs.each do |hub|
+          = hub.title 
       td = link_to 'Show', post
       td = link_to 'Edit', edit_post_path(post)
       td = link_to 'Destroy', post, data: {:confirm => 'Are you sure?'}, :method => :delete

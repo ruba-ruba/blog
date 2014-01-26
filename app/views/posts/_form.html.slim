@@ -2,11 +2,15 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :user_id
     = f.input :title
-    = f.input :published
-    = f.input :content
+    = f.input :published, as: :radio_buttons
     = f.input :type
+
+    - for hub in Hub.all
+      = check_box_tag "post[hub_ids][]", hub.id, @post.hubs.include?(hub)
+      = hub.title
+
+    = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
 
   .form-actions
     = f.button :submit

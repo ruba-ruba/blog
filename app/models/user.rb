@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :hubs
+  has_many :posts
   has_and_belongs_to_many :roles
 
   after_create :default_role
