@@ -1,28 +1,20 @@
 class HubsController < ApplicationController
   before_action :set_hub, only: [:show, :edit, :update, :destroy]
 
-  # GET /hubs
-  # GET /hubs.json
   def index
     @hubs = Hub.all
   end
 
-  # GET /hubs/1
-  # GET /hubs/1.json
   def show
   end
 
-  # GET /hubs/new
   def new
     @hub = Hub.new
   end
 
-  # GET /hubs/1/edit
   def edit
   end
 
-  # POST /hubs
-  # POST /hubs.json
   def create
     @hub = current_user.hubs.build(hub_params)
 
@@ -37,8 +29,6 @@ class HubsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /hubs/1
-  # PATCH/PUT /hubs/1.json
   def update
     respond_to do |format|
       if @hub.update(hub_params)
@@ -51,8 +41,6 @@ class HubsController < ApplicationController
     end
   end
 
-  # DELETE /hubs/1
-  # DELETE /hubs/1.json
   def destroy
     @hub.destroy
     respond_to do |format|
@@ -62,7 +50,6 @@ class HubsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_hub
       @hub = Hub.find(params[:id])
     end

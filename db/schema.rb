@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140119212500) do
+ActiveRecord::Schema.define(version: 20140126080411) do
 
   create_table "hubs", force: true do |t|
     t.integer  "user_id"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20140119212500) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ancestry"
+  end
+
+  create_table "posts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.boolean  "published"
+    t.string   "content"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "roles", force: true do |t|

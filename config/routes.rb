@@ -1,14 +1,17 @@
 Blog::Application.routes.draw do
   
-  resources :hubs
+  root 'posts#index'
 
   devise_for :users
-
-  root 'hubs#index'
-
   namespace :admin do
     resources :users
   end
+  
+  resources :hubs
+  resources :posts
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
