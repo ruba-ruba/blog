@@ -9,8 +9,10 @@ html lang="en"
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   body
-    = render 'shared/header'
-    = yield
+    .row
+      = render 'shared/flash'
+      = render 'shared/header'
+      = yield
 
 br/
 = debug params
