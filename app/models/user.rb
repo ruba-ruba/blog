@@ -12,10 +12,9 @@ class User < ActiveRecord::Base
 
   after_create :default_role
 
-  def role?(role)
+  def has_role?(role)
     return !!self.roles.find_by_name(role.to_s.camelize)
   end
-
 
   private
   

@@ -1,7 +1,21 @@
+// import compasss here
+@import "compass/layout.scss"
+// sticky footer
+@include sticky-footer(120px, ".wrapper", ".main_footer", ".footer")
+
+
 .flash
   .alert-box
     margin: 0px !important
     span
 
-.row
-  max-width: 640px !important
+.wrapper
+  width: 100% !important
+  max-width: 100% !important
+  min-width: 900px
+  .main
+    width: 640px
+    margin: 0 auto
+  .main-left
+    width: 240px
+    float: left
