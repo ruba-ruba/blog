@@ -10,6 +10,8 @@ html lang="en"
     = csrf_meta_tags
   body
     .wrapper.row
+      header
+        | HEADER
       .main-left
         = render 'shared/hubs_tree', :hubs => @hubs_for_tree
       .main-right
