@@ -1,9 +1,10 @@
 Blog::Application.routes.draw do
   
   mount Ckeditor::Engine => '/ckeditor'
+  
   root 'posts#index'
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   namespace :admin do
     resources :users
   end
