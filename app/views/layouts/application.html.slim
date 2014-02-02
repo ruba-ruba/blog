@@ -9,15 +9,14 @@ html lang="en"
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   body
-    .wrapper.row
+    .wrapper
       header
-        | HEADER
-      .main-left
+        = render 'shared/header'
+      .main-left.menu
         = render 'shared/hubs_tree', :hubs => @hubs_for_tree
       .main-right
       .main
         = render 'shared/flash'
-        = render 'shared/header'
         = yield
       .main_footer
     .footer

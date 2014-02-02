@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
-  # fir for cancan
+  # fix for cancan
   before_filter do
     resource = controller_name.singularize.to_sym
     method = "#{resource}_params"

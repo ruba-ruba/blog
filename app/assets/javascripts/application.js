@@ -11,11 +11,16 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require jquery.cookie
 //= require turbolinks
 //= require foundation
 //= require ckeditor/override
 //= require ckeditor/init
 
+// files
+
+//= require main.js.coffee
+
+
 $(function(){ $(document).foundation(); });
+

@@ -25,6 +25,7 @@ gem "cancan"
 gem "rolify"
 gem 'ancestry'
 gem "ckeditor"
+gem 'paperclip'
 
 
 #debug

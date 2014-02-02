@@ -6,9 +6,9 @@ module BlogMethods
   end
 
   module ClassMethods
-    # def find(param)
-    #   param.to_i == 0 ? find_by_title(param.gsub("-", " ")) : super
-    # end 
+    def published(table)
+      scope :published, lambda { where(["#{table}.published = ?", true]) }
+    end
   end
   
   module InstanceMethods

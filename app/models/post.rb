@@ -5,4 +5,6 @@ class Post < ActiveRecord::Base
   has_many :categorizations
   has_many :hubs, :through => :categorizations
 
+  published('posts')
+  
 end
