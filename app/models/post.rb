@@ -6,5 +6,5 @@ class Post < ActiveRecord::Base
   has_many :hubs, :through => :categorizations
 
   published('posts')
-  
+
 end

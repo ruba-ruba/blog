@@ -10,13 +10,14 @@ html lang="en"
     = csrf_meta_tags
   body
     .wrapper
+      = render 'shared/flash'
+      = render 'shared/admin_header'
       header
         = render 'shared/header'
       .main-left.menu
         = render 'shared/hubs_tree', :hubs => @hubs_for_tree
       .main-right
       .main
-        = render 'shared/flash'
         = yield
       .main_footer
     .footer

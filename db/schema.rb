@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202084943) do
+ActiveRecord::Schema.define(version: 20140202122902) do
 
   create_table "attachments", force: true do |t|
     t.string   "type"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20140202084943) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.string   "attachable_id"
+    t.string   "attachable_type"
   end
 
   create_table "categorizations", force: true do |t|
