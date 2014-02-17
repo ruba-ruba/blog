@@ -56,8 +56,8 @@ class PostsController < ApplicationController
   end
 
   def autocomplete
-    users = Post.published.where("title LIKE ?", "#{params[:term]}%").limit(5).map(&:title)
-    render :json => users
+    posts = Post.published.where("title LIKE ?", "#{params[:term]}%").limit(5).map(&:title)
+    render :json => posts
   end
 
   private
