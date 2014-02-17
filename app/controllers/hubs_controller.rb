@@ -1,8 +1,9 @@
 class HubsController < ApplicationController
   load_and_authorize_resource
   before_action :set_hub, only: [:show, :edit, :update, :destroy]
+ 
   def index
-    @hubs = Hub.all
+    @hubs = Hub.published
   end
 
   def show

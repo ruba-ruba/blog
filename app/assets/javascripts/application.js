@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require jquery.cookie
 //= require turbolinks
 //= require foundation
@@ -25,3 +26,6 @@
 
 $(function(){ $(document).foundation(); });
 
+$( document ).ready(function() {
+
+});

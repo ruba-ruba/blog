@@ -7,4 +7,12 @@ class Post < ActiveRecord::Base
 
   published('posts')
 
+  def self.search(search)
+    if search
+      where('title LIKE :search OR content LIKE :search',  {:search => "%#{search}%"})
+    else
+      scoped
+    end
+  end
+
 end

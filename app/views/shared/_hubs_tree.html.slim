@@ -1,5 +1,5 @@
 - hubs.each do |hub|
-  = hub.title
+  = link_to hub.title, hub
   br/
   - if hub.children.any?
     span.clid

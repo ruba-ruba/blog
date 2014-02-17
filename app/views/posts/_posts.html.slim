@@ -1,0 +1,20 @@
+.posts  
+  table
+    tr
+      th Title
+      th Content
+      th Hubs
+      th
+      th
+      th
+
+    - @posts.each do |post|
+      tr
+        td = post.title
+        td = post.content.html_safe
+        td 
+          - post.hubs.each do |hub|
+            = hub.title 
+        td = link_to 'Show', post
+        td = link_to 'Edit', edit_post_path(post)
+        td = link_to 'Destroy', post, data: {:confirm => 'Are you sure?'}, :method => :delete

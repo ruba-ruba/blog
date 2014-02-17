@@ -7,6 +7,7 @@ gem 'mysql2'
 # defaults
 gem 'jquery-rails'
 gem 'jquery-cookie-rails'
+gem 'jquery-ui-rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'compass-rails'

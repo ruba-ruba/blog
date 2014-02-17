@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.published
   end
 
   def show
@@ -48,6 +48,16 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @posts = Post.published.search(params[:search])
+    render "posts/index"
+  end
+
+  def autocomplete
+    users = Post.published.where("title LIKE ?", "#{params[:term]}%").limit(5).map(&:title)
+    render :json => users
   end
 
   private

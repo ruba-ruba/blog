@@ -10,7 +10,13 @@ Blog::Application.routes.draw do
   end
   
   resources :hubs
-  resources :posts
+  resources :posts do
+    collection do
+      #get '/tag' => 'posts#tag_search'
+      get '/search' => 'posts#search'
+    end
+  end
+  match '/autocomplete', to: 'posts#autocomplete', via: [:get, :post]
 
 
 
