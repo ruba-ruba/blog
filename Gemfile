@@ -27,6 +27,7 @@ gem "rolify"
 gem 'ancestry'
 gem "ckeditor"
 gem 'paperclip'
+gem 'kaminari'
 
 
 #debug
