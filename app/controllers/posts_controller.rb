@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.includes(:hubs).published.search(params[:search])
+    @posts = Post.includes(:hubs).published.limit(20).search(params[:search])
     render "posts/index"
   end
 
