@@ -14,18 +14,18 @@ $ ->
 
 
   #posts roller
-  $('.next_post').click ->
-    post = $(this).parent()
-    post.hide()
-    post.next().show()
-  $('.prev_post').click ->
-    post = $(this).parent()
-    post.hide()
-    post.prev().show()
+#   $('.next_post').click ->
+#     post = $(this).parent()
+#     post.hide()
+#     post.next().show()
+#   $('.prev_post').click ->
+#     post = $(this).parent()
+#     post.hide()
+#     post.prev().show()
 
-#paly with posts
-$(window).load ->
-  $('.posts > div').first().show();
-  return
+  #paly with posts
+# $(window).load ->
+#   $('.posts > div').first().show();
+#   return
 
   

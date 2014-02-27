@@ -1,6 +1,6 @@
 .posts
   - @posts.each do |post|
-    div.hide class=(dom_id(post))
+    div class=(dom_id(post))
       div.title
         = post.title
       div.content 
@@ -8,8 +8,4 @@
       div.info
         - post.hubs.each do |hub|
           = hub.title
-      span.prev_post
-        | <<
-      span.next_post
-        | >>
-      
+= paginate @posts

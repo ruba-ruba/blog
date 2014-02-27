@@ -1,5 +1,2 @@
-= @hub.title
-
-= link_to 'Edit', edit_hub_path(@hub)
-'|
-= link_to 'Back', hubs_path
+- @posts = @hub.posts.page(params[:page])
+= render 'posts/posts', :collection => @posts

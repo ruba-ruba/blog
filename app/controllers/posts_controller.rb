@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.includes(:hubs).published
+    @posts = Post.includes(:hubs).published.page params[:page]
   end
 
   def show
@@ -51,12 +51,12 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.includes(:hubs).published.limit(20).search(params[:search])
+    @posts = Post.includes(:hubs).published.search(params[:search]).page(params[:page])
     render "posts/index"
   end
 
   def autocomplete
-    posts = Post.includes(:hubs).published.where("title LIKE ?", "#{params[:term]}%").limit(5).map(&:title)
+    posts = Post.includes(:hubs).published.where("title LIKE ?", "#{params[:term]}%").page(params[:page]).map(&:title)
     render :json => posts
   end
 
