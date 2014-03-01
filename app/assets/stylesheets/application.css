@@ -13,4 +13,13 @@
  *= require main.css.sass
  *= require foundation_and_overrides
  *= require admin/admin.sass
+ *= require posts.sass
  */
+
+ 
+
+ /*overrides*/
+
+ p {
+  margin: 0px !important;
+ }

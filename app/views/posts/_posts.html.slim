@@ -1,11 +1,6 @@
 .posts
   - @posts.each do |post|
-    div class=(dom_id(post))
-      div.title
-        = post.title
-      div.content 
-        = post.content.html_safe
-      div.info
-        - post.hubs.each do |hub|
-          = hub.title
-= paginate @posts
+    = render 'post', post: post
+    span.actions
+      = link_to 'читати далі', post_path(post), class: 'button tiny'
+  = paginate @posts
