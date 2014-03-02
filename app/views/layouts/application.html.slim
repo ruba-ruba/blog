@@ -14,11 +14,12 @@ html lang="en"
       = render 'shared/admin_header'
       header
         = render 'shared/header'
-      .main-left.menu
-        = render 'shared/hubs_tree', :hubs => @hubs_for_tree
-      .main-right
-      .main
-        = yield
+      .container
+        .menu
+          = render 'shared/hubs_tree', :hubs => @hubs_tree
+        .main
+          .row
+            = yield
       .main_footer
     .footer
       = debug params

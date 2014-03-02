@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :categorizations
   has_many :hubs, :through => :categorizations
+  has_many :attachments, :as => :attachable
 
   published('posts')
 

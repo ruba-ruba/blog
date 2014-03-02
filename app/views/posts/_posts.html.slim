@@ -1,6 +1,4 @@
-.posts
+.posts 
   - @posts.each do |post|
-    = render 'post', post: post
-    span.actions
-      = link_to 'читати далі', post_path(post), class: 'button tiny'
+    = render 'posts/post', post: post
   = paginate @posts

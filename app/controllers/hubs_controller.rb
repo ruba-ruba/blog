@@ -53,6 +53,7 @@ class HubsController < ApplicationController
   private
     def set_hub
       @hub = Hub.find(params[:id])
+      @posts = @hub.posts.page(params[:page])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
