@@ -1,6 +1,8 @@
 div class=(dom_id(post))
   div.title
     = post.title
+  div.created
+    = post.created_at.strftime("%d %B %Y")
   div.content 
     = post.content.html_safe
   div.info
