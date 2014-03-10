@@ -16,7 +16,7 @@ html lang="en"
         = render 'shared/header'
       .container
         .menu
-          = render 'shared/hubs_tree', :hubs => @hubs_tree
+          = yield :menu
         .main
           .row
             = yield

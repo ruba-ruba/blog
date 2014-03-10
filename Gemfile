@@ -31,6 +31,12 @@ gem 'paperclip'
 gem 'kaminari'
 
 
+
+#TODO: investigate
+gem 'mousetrap-rails'
+
+
+
 #debug
 gem 'better_errors'
 gem 'pry'

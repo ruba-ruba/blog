@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require mousetrap
 //= require jquery.ui.all
 //= require jquery.cookie
 //= require turbolinks
@@ -20,7 +21,6 @@
 //= require ckeditor/init
 
 // files
-
 //= require main.js.coffee
 
 
