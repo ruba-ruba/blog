@@ -15,8 +15,9 @@ html lang="en"
       header
         = render 'shared/header'
       .container
-        .menu
-          = yield :menu
+        - if render_menu_partial
+          .menu
+            = render 'shared/hubs_tree', :hubs => @hubs_tree
         .main
           .row
             = yield
