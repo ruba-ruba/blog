@@ -1,4 +1,5 @@
 .posts
+  position: relative
   border: 3px solid green
   div[class^="post_"]
     border: 2px solid red
@@ -9,17 +10,21 @@
       font-weight: bold
       margin-bottom: 4px
     .created
+      font-size: 11px
+      color: grey
+      text-align: right
       width: 100%
     .content
       font-size: 15px
     .info
+      position: relative
       min-height: auto
       .hubs
-        display: inline-block
+        display: block
       .tags
-        display: inline-block
+        display: block
       .actions
-        float: right
+        text-align: right
         .button
           margin: 0px
         
