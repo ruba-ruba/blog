@@ -11,10 +11,10 @@ html lang="en"
   body
     .wrapper
       = render 'shared/flash'
-      = render 'shared/admin_header'
+      /= render 'shared/admin_pannel'
       header
-        = render 'shared/header'
         = render 'shared/header_menu'
+        = render 'shared/header'
       .container
         - if render_menu_partial
           .menu

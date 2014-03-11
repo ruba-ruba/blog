@@ -1,6 +1,6 @@
 div class=(dom_id(post))
   div.title
-    = post.title
+    = link_to post.title, post
   div.created
     = created(post)
   div.content 
@@ -10,6 +10,7 @@ div class=(dom_id(post))
       - post.hubs.each do |hub|
         = hub.title
     span.tags
-    - unless post_show
-      span.actions
+    span.actions
+      = post.impressionist_count(:filter=>:session_hash)
+      - unless post_show
         = link_to 'читати далі', post_path(post), class: 'button tiny'

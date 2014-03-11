@@ -3,7 +3,7 @@ class HubsController < ApplicationController
   before_action :set_hub, only: [:show, :edit, :update, :destroy]
  
   def index
-    @hubs = Hub.published
+    @hubs = Hub.includes(:posts).published
   end
 
   def show
@@ -52,7 +52,7 @@ class HubsController < ApplicationController
 
   private
     def set_hub
-      @hub = Hub.find(params[:id])
+      @hub = Hub.includes(:posts).find(params[:id])
       @posts = @hub.posts.page(params[:page])
     end
 

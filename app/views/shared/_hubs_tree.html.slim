@@ -1,6 +1,6 @@
 - hubs.each do |hub|
-  = link_to hub.title, hub
-  br/
+  span.hub_link
+    = link_to hub.title, hub
   - if hub.children.any?
-    span.clid
+    span.hub_clid
       = render 'shared/hubs_tree', :hubs => hub.children

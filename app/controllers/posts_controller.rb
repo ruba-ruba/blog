@@ -1,9 +1,15 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  impressionist :actions=>[:show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.includes(:hubs).published.page params[:page]
+  end
+
+  def articles
+    @posts = Post.includes(:hubs).articles.published.page params[:page]
+    render :index
   end
 
   def show

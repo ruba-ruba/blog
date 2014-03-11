@@ -1,5 +1,5 @@
-.admin_header
-  - if user_signed_in? && current_user.has_role?('admin')
+- if user_signed_in? && current_user.has_role?('admin')
+  .admin_pannel
     - if user_signed_in?
       = link_to 'Edit profile', edit_user_registration_path,  class: "button small"
       = link_to 'Logout', destroy_user_session_path, :method => :delete, class: "button small"

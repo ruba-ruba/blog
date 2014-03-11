@@ -29,7 +29,7 @@ gem 'ancestry'
 gem "ckeditor"
 gem 'paperclip'
 gem 'kaminari'
-
+gem 'impressionist'
 
 
 #TODO: investigate

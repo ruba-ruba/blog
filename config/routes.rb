@@ -14,6 +14,7 @@ Blog::Application.routes.draw do
     collection do
       #get '/tag' => 'posts#tag_search'
       get '/search' => 'posts#search'
+      get 'articles' => 'posts#articles'
     end
   end
   match '/autocomplete', to: 'posts#autocomplete', via: [:get, :post]

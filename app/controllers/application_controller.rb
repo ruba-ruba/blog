@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   helper_method :render_menu_partial
   helper_method :post_show
   helper_method :created
-  
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:warning] = exception.message
