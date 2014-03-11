@@ -22,6 +22,6 @@
 
  /*overrides*/
 
- p {
+ p, a {
   margin: 0px !important;
  }
