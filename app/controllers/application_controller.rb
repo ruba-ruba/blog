@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :hubs
   
-  helper_method :render_menu_partial
+  helper_method :should_render_for_post
   helper_method :post_show
   helper_method :created
 
@@ -15,14 +15,15 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
-  # fix for cancan
+  fix for cancan
   before_filter do
     resource = controller_name.singularize.to_sym
     method = "#{resource}_params"
     params[resource] &&= send(method) if respond_to?(method, true)
   end
 
-  def render_menu_partial
+
+  def should_render_for_post
     %w(posts hubs).include?(controller_name) && %w(index show).include?(action_name) 
   end
 
