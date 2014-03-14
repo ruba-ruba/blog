@@ -28,4 +28,20 @@ $ ->
 #   $('.posts > div').first().show();
 #   return
 
-  
+  $("#autocomplete_search").blur ->
+    value = $(this).val()
+    if value.length > 0
+      $(this).css
+        'transition': '0.4s',
+        'width': '240px'
+    else
+      $(this).css
+        'transition': '0.4s',
+        'width': '150px'
+
+  $("#autocomplete_search").focus ->
+    $(this).css
+      'transition': '0.4s',
+      'width': '240px'
+
+
