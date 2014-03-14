@@ -11,7 +11,11 @@ class Post < ActiveRecord::Base
   has_many :attachments, :as => :attachable
 
   published('posts')
-  scope :articles,  -> { where(type: 'Article') }
+  default_scope order('created_at DESC')
+  scope :articles,  -> { where(content_type: 'Article') }
+  scope :travels,  -> { where(content_type: 'Travel') }
+  scope :photos,  -> { where(content_type: 'Photo') }
+
 
   def self.search(search)
     if search

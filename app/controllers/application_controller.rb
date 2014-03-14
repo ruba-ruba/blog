@@ -11,11 +11,11 @@ class ApplicationController < ActionController::Base
   helper_method :created
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:warning] = exception.message
+    flash[:alert] = exception.message
     redirect_to root_url
   end
 
-  fix for cancan
+  #fix for cancan
   before_filter do
     resource = controller_name.singularize.to_sym
     method = "#{resource}_params"
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
 
   def should_render_for_post
-    %w(posts hubs).include?(controller_name) && %w(index show).include?(action_name) 
+    %w(posts hubs).include?(controller_name) && %w(index show search).include?(action_name) 
   end
 
   def post_show

@@ -1,16 +1,31 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  skip_authorize_resource :except => [:new, :edit, :create, :update, :destroy]
   impressionist :actions=>[:show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :pass_data, only: [:articles, :travels, :photos]
 
   def index
     @posts = Post.includes(:hubs).published.page params[:page]
   end
 
   def articles
-    @posts = Post.includes(:hubs).articles.published.page params[:page]
     render :index
   end
+
+  def travels
+    render :index
+  end
+
+  def photos
+    render :index
+  end
+
+  def pass_data
+    scope = params[:action]
+    @posts = Post.includes(:hubs).send(scope.to_sym).published.page params[:page]
+  end
+
 
   def show
   end
@@ -73,6 +88,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :title, :published, :content, :type, { :hub_ids => [] })
+      params.require(:post).permit(:user_id, :title, :published, :content, :content_type, :type, { :hub_ids => [] })
     end
 end
