@@ -9,4 +9,7 @@ class Hub < ActiveRecord::Base
 
   published('hubs')
 
+  validates :title, presence: true
+  validates :published, :inclusion => {:in => [true, false]}
+
 end

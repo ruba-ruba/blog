@@ -2,8 +2,9 @@
   = f.error_notification
   .form-inputs
     = f.input :title
-    = f.input :description
     = f.input :published, :collection => [true, false], :as => :radio_buttons
+    = f.input :content_type, as: :select, :collection => Post::POST_TYPES, include_blank: false
     = f.collection_select :parent_id, Hub.order(:title), :id, :title, include_blank: true
+    = f.input :description, as: :text
   .form-actions
     = f.button :submit

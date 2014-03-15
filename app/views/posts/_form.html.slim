@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :title
     = f.input :published, as: :radio_buttons
-    = f.input :content_type, as: :select, :collection => Post::POST_TYPES, include_blank: true
+    = f.input :content_type, as: :select, :collection => Post::POST_TYPES, include_blank: false
 
     - for hub in Hub.all
       = check_box_tag "post[hub_ids][]", hub.id, @post.hubs.include?(hub)

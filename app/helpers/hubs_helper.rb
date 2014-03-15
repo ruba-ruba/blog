@@ -1,5 +1,5 @@
 module HubsHelper
   def hubs
-    @hubs_tree = Hub.roots
+    @hubs_tree = Hub.published.roots
   end
 end

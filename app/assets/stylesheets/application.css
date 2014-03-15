@@ -16,12 +16,5 @@
  *= require posts.sass
  *= require hubs.sass
  *= require search.sass
+ *= require fonts.sass
  */
-
- 
-
- /*overrides*/
-
- p, a {
-  margin: 0px !important;
- }

@@ -59,6 +59,6 @@ class HubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hub_params
-      params.require(:hub).permit(:title, :description, :published, :parent_id, :ancestry, { :post_ids => [] })
+      params.require(:hub).permit(:title, :description, :published, :parent_id, :content_type, { :post_ids => [] })
     end
 end

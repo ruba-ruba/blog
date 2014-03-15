@@ -16,6 +16,8 @@ class Post < ActiveRecord::Base
   scope :travels,  -> { where(content_type: 'Travel') }
   scope :photos,  -> { where(content_type: 'Photo') }
 
+  validates :title, presence: true
+  validates :published, :inclusion => {:in => [true, false]}
 
   def self.search(search)
     if search
