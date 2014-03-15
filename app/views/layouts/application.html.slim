@@ -3,7 +3,9 @@ html lang="en"
   head
     meta charset="utf-8"
     meta content="width=(device-width,)initial-scale=1.0" name="viewport"
-    title= 'блог' 
+    title
+      = '+++'
+      = page_title
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "vendor/modernizr"
@@ -17,12 +19,13 @@ html lang="en"
           = render 'shared/header_menu'
           = render 'shared/header'
       .container
-        - if should_render_for_post
-          .menu
-            = render 'shared/hubs_tree', :hubs => @hubs_tree
         .main
           .row
             = yield
+        - if should_render_for_post
+          .menu
+            = render 'shared/hubs_tree', :hubs => @hubs_tree
+        
       .main_footer
     .footer
       = debug params

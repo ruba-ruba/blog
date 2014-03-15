@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   helper_method :should_render_for_post
   helper_method :post_show
   helper_method :created
+  helper_method :page_title
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:alert] = exception.message
@@ -20,6 +21,10 @@ class ApplicationController < ActionController::Base
     resource = controller_name.singularize.to_sym
     method = "#{resource}_params"
     params[resource] &&= send(method) if respond_to?(method, true)
+  end
+
+  def page_title
+    #todo
   end
 
 
