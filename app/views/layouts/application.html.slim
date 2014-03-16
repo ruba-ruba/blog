@@ -4,7 +4,6 @@ html lang="en"
     meta charset="utf-8"
     meta content="width=(device-width,)initial-scale=1.0" name="viewport"
     title
-      = '+++'
       = page_title
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
@@ -16,8 +15,8 @@ html lang="en"
       = render 'shared/admin_pannel'
       header
         - if should_render_for_post
-          = render 'shared/header_menu'
           = render 'shared/header'
+          = render 'shared/header_menu'
       .container
         .main
           .row

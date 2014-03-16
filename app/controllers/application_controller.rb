@@ -24,7 +24,15 @@ class ApplicationController < ActionController::Base
   end
 
   def page_title
-    #todo
+    base = 'Mykhailo Rybak Blog'
+    case
+    when @post
+      "#{@post.title} | #{base}"
+    when @hub
+      "#{@hub.title} | #{base}"
+    else
+      base
+    end
   end
 
 
