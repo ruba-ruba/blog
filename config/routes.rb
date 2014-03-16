@@ -7,6 +7,7 @@ Blog::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations" }
   namespace :admin do
     resources :users
+    get '/' => 'manage#index'
   end
   
   resources :hubs
@@ -19,6 +20,9 @@ Blog::Application.routes.draw do
     end
   end
   match '/autocomplete', to: 'posts#autocomplete', via: [:get, :post]
+
+  # info controller
+  get '/info/site_map' => 'info#site_map'
 
 
 

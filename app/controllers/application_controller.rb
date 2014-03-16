@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :hubs
   
-  helper_method :should_render_for_post
+  helper_method :should_render_for_post, :cp
   helper_method :post_show
   helper_method :created
   helper_method :page_title
@@ -37,7 +37,10 @@ class ApplicationController < ActionController::Base
 
 
   def should_render_for_post
-    %w(posts hubs).include?(controller_name) && %w(index show search).include?(action_name) 
+    # %w(posts hubs).include?(controller_name) && %w(index show search).include?(action_name) 
+    
+    #todo investigate another way to do this shit
+    true
   end
 
   def post_show
@@ -48,4 +51,7 @@ class ApplicationController < ActionController::Base
     "#{time_ago_in_words(object.created_at)} ago" 
   end
   
+  def cp(path)
+    "current" if request.url.include?(path) || @post && @post.hubs.include?(Hub.find(path.split('/')[2]))
+  end
 end

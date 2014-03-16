@@ -18,6 +18,7 @@ class Post < ActiveRecord::Base
 
   validates :title, presence: true
   validates :published, :inclusion => {:in => [true, false]}
+  validates :hubs, :presence => true
 
   def self.search(search)
     if search
