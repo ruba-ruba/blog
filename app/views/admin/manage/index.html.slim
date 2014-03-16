@@ -1,4 +1,24 @@
-- @hubs.each do |hub|
-  = hub.title
-  - hub.posts.each do |post|
-    = post.title
+table.admin
+  tr
+    td hub
+    td post
+    td publised
+    td viewed
+    td
+  - @hubs.each do |hub|
+    tr data={publised: hub.published.to_s}
+      td = link_to hub.title, hub
+      td 
+      td = hub.published
+      td
+      td = link_to 'Edit', edit_hub_path(hub)
+      td = link_to 'Destroy', hub, data: {:confirm => 'Are you sure?'}, :method => :delete
+    tr
+      - hub.posts.each do |post|
+        tr data={publised: post.published.to_s}
+          td 
+          td = link_to post.title, post
+          td = post.published
+          td = post.impressionist_count(:filter=>:session_hash)
+          td = link_to 'Edit', edit_post_path(post)
+          td = link_to 'Destroy', post, data: {:confirm => 'Are you sure?'}, :method => :delete

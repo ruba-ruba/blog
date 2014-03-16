@@ -4,7 +4,7 @@ class HubsController < ApplicationController
   before_action :set_hub, only: [:show, :edit, :update, :destroy]
  
   def index
-    @hubs = Hub.includes(:posts).published
+    @hubs = Hub.published.includes(:posts).published
   end
 
   def show
@@ -53,11 +53,10 @@ class HubsController < ApplicationController
 
   private
     def set_hub
-      @hub = Hub.includes(:posts).find(params[:id])
+      @hub = Hub.published.includes(:posts).find(params[:id])
       @posts = @hub.posts.page(params[:page])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def hub_params
       params.require(:hub).permit(:title, :description, :published, :parent_id, :content_type, { :post_ids => [] })
     end

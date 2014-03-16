@@ -2,6 +2,6 @@ class Admin::ManageController < ApplicationController
   authorize_resource :class => :false
   
   def index
-    @hubs = Hub.all
+    @hubs = Hub.includes(:posts).all
   end
 end
