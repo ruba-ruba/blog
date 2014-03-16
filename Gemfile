@@ -30,6 +30,7 @@ gem "ckeditor"
 gem 'paperclip'
 gem 'kaminari'
 gem 'impressionist'
+gem 'acts-as-taggable-on'
 
 
 #TODO: investigate

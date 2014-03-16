@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315054641) do
+ActiveRecord::Schema.define(version: 20140316180003) do
 
   create_table "attachments", force: true do |t|
     t.string   "type"
@@ -102,15 +102,28 @@ ActiveRecord::Schema.define(version: 20140315054641) do
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
-
   create_table "roles_users", id: false, force: true do |t|
     t.integer "role_id"
     t.integer "user_id"
   end
 
-  add_index "roles_users", ["role_id"], name: "index_roles_users_on_role_id", using: :btree
-  add_index "roles_users", ["user_id"], name: "index_roles_users_on_user_id", using: :btree
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string "name"
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
