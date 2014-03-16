@@ -12,7 +12,8 @@ html lang="en"
   body
     .wrapper
       = render 'shared/flash'
-      = render 'shared/admin_pannel'
+      - if controller.class.name =~ /Admin::/
+        = render 'shared/admin_pannel'
       header
         - if should_render_for_post
           = render 'shared/header'
