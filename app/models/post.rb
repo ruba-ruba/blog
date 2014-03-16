@@ -2,7 +2,8 @@ class Post < ActiveRecord::Base
   include BlogMethods
   paginates_per 6
   is_impressionable
-  
+  acts_as_ordered_taggable
+
   POST_TYPES = %w(Article Travel Photo) # code ? 
 
   belongs_to :user
@@ -11,7 +12,7 @@ class Post < ActiveRecord::Base
   has_many :attachments, :as => :attachable
 
   published('posts')
-  default_scope order('created_at DESC')
+  default_scope { order('created_at desc') } 
   scope :articles,  -> { where(content_type: 'Article') }
   scope :travels,  -> { where(content_type: 'Travel') }
   scope :photos,  -> { where(content_type: 'Photo') }

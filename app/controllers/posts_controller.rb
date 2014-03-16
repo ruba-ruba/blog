@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   before_action :pass_data, only: [:articles, :travels, :photos]
 
   def index
-    @posts = Post.includes(:hubs).published.page params[:page]
+    if params[:tag]
+      @posts = Post.includes(:hubs, :tags, :impressions).published.tagged_with(params[:tag]).page(params[:page])
+    else
+      @posts = Post.includes(:hubs, :tags, :impressions).published.page(params[:page])
+    end
   end
 
   def articles
@@ -72,22 +76,22 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.includes(:hubs).published.search(params[:search]).page(params[:page])
+    @posts = Post.includes(:hubs, :tags, :impressions).published.search(params[:search]).page(params[:page])
     render "posts/index"
   end
 
   def autocomplete
-    posts = Post.includes(:hubs).published.where("title LIKE ?", "%#{params[:term]}%").page(params[:page]).map(&:title)
+    posts = Post.includes(:hubs, :tags, :impressions).published.where("title LIKE ?", "%#{params[:term]}%").page(params[:page]).map(&:title)
     render :json => posts
   end
 
   private
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.includes(:hubs, :tags, :impressions).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :title, :published, :content, :content_type, :type, { :hub_ids => [] })
+      params.require(:post).permit(:user_id, :title, :published, :content, :content_type, :tag_list, :type, { :hub_ids => [] })
     end
 end

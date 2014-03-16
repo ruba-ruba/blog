@@ -10,6 +10,7 @@ div class=(dom_id(post))
       - post.hubs.each do |hub|
         = hub.title
     span.tags
+      = raw post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ')
     span.actions
       = post.impressionist_count(:filter=>:session_hash)
       - unless post_show

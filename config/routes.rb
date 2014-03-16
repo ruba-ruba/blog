@@ -24,6 +24,8 @@ Blog::Application.routes.draw do
   # info controller
   get '/info/site_map' => 'info#site_map'
 
+  # acts as taggable on gem
+  get 'tags/:tag', to: 'posts#index', as: :tag
 
 
   # The priority is based upon order of creation: first created -> highest priority.
