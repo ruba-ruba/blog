@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :hubs
   
-  helper_method :should_render_for_post, :cp
+  helper_method :should_render_for_post, :current_hub, :current_tab
   helper_method :post_show
   helper_method :created
   helper_method :page_title
@@ -51,7 +51,11 @@ class ApplicationController < ActionController::Base
     "#{time_ago_in_words(object.created_at)} ago" 
   end
   
-  def cp(path)
-    "current" if request.url.include?(path) || @post && @post.hubs.include?(Hub.find(path.split('/')[2]))
+  def current_hub(path)
+    "current_hub" if request.url.include?(path) || @post && @post.hubs.include?(Hub.find(path.split('/')[2]))
+  end
+
+  def current_tab(path)
+    "current_tab" if request.url == path
   end
 end
