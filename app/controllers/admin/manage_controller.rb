@@ -1,5 +1,6 @@
 class Admin::ManageController < ApplicationController
   authorize_resource :class => :false
+  layout 'admin'
   
   def index
     @hubs = Hub.includes(:posts).all

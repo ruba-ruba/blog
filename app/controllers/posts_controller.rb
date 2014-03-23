@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   impressionist :actions=>[:show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :pass_data, only: [:articles, :travels, :photos]
+  layout 'admin', :only => [:edit, :new]
   
   def index
     if params[:tag]
