@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   impressionist :actions=>[:show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :pass_data, only: [:articles, :travels, :photos]
-
+  
   def index
     if params[:tag]
       @posts = Post.includes(:hubs, :tags, :impressions).published.tagged_with(params[:tag]).page(params[:page])
@@ -36,6 +36,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.attachments.build
   end
 
   def edit
@@ -56,6 +57,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    binding.pry
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -92,6 +94,8 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :title, :published, :content, :content_type, :tag_list, :type, :attachable_id, :attachable_type, { :hub_ids => [] })
+      params.require(:post).permit!
+      #params.require(:post).permit(:user_id, :title, :published, :content, :content_type, :tag_list, :type, {:hub_ids => []}, attachments: Attachment.attribute_names.collect { |att| att.to_sym })
     end
+
 end

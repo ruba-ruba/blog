@@ -1,9 +1,11 @@
-= simple_form_for(@post) do |f|
+= simple_form_for @post, html: { class: 'form-horizontal', multipart: true} do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :title
     = f.input :published, as: :radio_buttons
+    = f.simple_fields_for :attachments, @post.attachments.build do |a|
+      = a.file_field :file
     = f.input :content_type, as: :select, :collection => Post::POST_TYPES, include_blank: false
     = f.input :tag_list, :hint => 'Comma separated'
     - for hub in Hub.all
