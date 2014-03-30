@@ -1,3 +1,5 @@
 span.search
   = form_tag search_posts_path, :method => 'get', :id => "posts_search" do
     = text_field_tag :search, params[:search], id: 'autocomplete_search', autocomplete: 'off', placeholder: 'шукай'
+    span.search_button
+      = image_tag ('search_ico.png')

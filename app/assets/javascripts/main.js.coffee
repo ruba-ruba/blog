@@ -11,6 +11,10 @@ $ ->
   $("#autocomplete_search").autocomplete
     source: '/autocomplete'
 
+  # trigger search form
+    $('span.search_button').click ->
+      $('#posts_search').submit()
+
 
   # toggle input field width
   # $("#autocomplete_search").blur ->
