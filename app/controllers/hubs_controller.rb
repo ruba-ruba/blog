@@ -54,7 +54,7 @@ class HubsController < ApplicationController
   private
     def set_hub
       @hub = Hub.published.includes(:posts).find(params[:id])
-      @posts = @hub.posts.published.page(params[:page])
+      @posts = @hub.posts.published.page(params[:page]).per(6)
     end
 
     def hub_params

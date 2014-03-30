@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   
   def index
     if params[:tag]
-      @posts = Post.includes(:hubs, :tags, :impressions).published.tagged_with(params[:tag]).page(params[:page])
+      @posts = Post.includes(:hubs, :tags, :impressions).published.tagged_with(params[:tag]).page(params[:page]).per(6)
     else
-      @posts = Post.includes(:hubs, :tags, :impressions).published.page(params[:page])
+      @posts = Post.includes(:hubs, :tags, :impressions).published.page(params[:page]).per(4)
     end
   end
 
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   def pass_data
     scope = params[:action]
-    @posts = Post.includes(:hubs).send(scope.to_sym).published.page params[:page]
+    @posts = Post.includes(:hubs, :tags, :impressions).send(scope.to_sym).published.page(params[:page]).per(6)
   end
 
 
@@ -54,7 +54,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    binding.pry
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }

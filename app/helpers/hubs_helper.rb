@@ -1,5 +1,5 @@
 module HubsHelper
-  def hubs
-    @hubs_tree = Hub.published.roots
+  def category_menu
+    @categories = Hub.published.roots
   end
 end

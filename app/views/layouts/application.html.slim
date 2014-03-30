@@ -12,17 +12,21 @@ html lang="en"
     .wrapper
       = render 'shared/flash'
       header
-        - if should_render_for_post
+        - if wants_header
           = render 'shared/header'
           = render 'shared/header_menu'
       .container
         .main
           .row
             = yield
-        - if should_render_for_post
+        - if wants_menu
           .menu
-            = render 'shared/hubs_tree', :hubs => @hubs_tree
-        
+            = render 'shared/search'
+            = render 'shared/categories', :hubs => @categories
+      .clearfix
+      - if allow_slider
+        .slider
+          | NEW FEATURE
       .main_footer
     .footer
       = debug params

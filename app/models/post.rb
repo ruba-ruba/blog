@@ -1,6 +1,5 @@
 class Post < ActiveRecord::Base
   include BlogMethods
-  paginates_per 6
   is_impressionable
   acts_as_ordered_taggable
 

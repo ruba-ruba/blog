@@ -2,11 +2,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include ActionView::Helpers::DateHelper
-  include HubsHelper
+  include ApplicationHelper
   
-  before_filter :hubs
+  before_filter :category_menu, :recent_posts
   
-  helper_method :should_render_for_post, :current_hub, :current_tab
+  helper_method :current_hub, :current_tab
+  helper_method :wants_menu, :wants_header
+  helper_method :allow_slider
   helper_method :post_show
   helper_method :created
   helper_method :page_title
@@ -36,10 +38,13 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def should_render_for_post
+  def wants_header
     # %w(posts hubs).include?(controller_name) && %w(index show search).include?(action_name) 
-    
     #todo investigate another way to do this shit
+    true
+  end
+
+  def wants_menu
     true
   end
 
