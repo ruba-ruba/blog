@@ -20,5 +20,6 @@
  */
 
 
-h2 {
+html{
+  overflow-y: scroll;
 }

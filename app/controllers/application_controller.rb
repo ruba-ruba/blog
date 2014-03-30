@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
-  #fix for cancan
+  # fix for cancan, without this shit cancan doesn't work 
   before_filter do
     resource = controller_name.singularize.to_sym
     method = "#{resource}_params"

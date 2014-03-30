@@ -22,10 +22,6 @@ class PostsController < ApplicationController
     render :index
   end
 
-  def photos
-    render :index
-  end
-
   def pass_data
     scope = params[:action]
     @posts = Post.includes(:hubs).send(scope.to_sym).published.page params[:page]

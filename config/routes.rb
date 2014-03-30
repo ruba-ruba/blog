@@ -1,8 +1,9 @@
 Blog::Application.routes.draw do
   
+  get "home/index"
   mount Ckeditor::Engine => '/ckeditor'
   
-  root 'posts#index'
+  root 'home#index'
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   namespace :admin do
@@ -10,13 +11,12 @@ Blog::Application.routes.draw do
     get '/' => 'manage#index'
   end
   
-  resources :hubs
+  resources :hubs, :path => "categories"
   resources :posts do
     collection do
       get 'search' => 'posts#search'
       get 'articles' => 'posts#articles'
       get 'travels' => 'posts#travels'
-      get 'photos' => 'posts#photos'
     end
   end
   match '/autocomplete', to: 'posts#autocomplete', via: [:get, :post]

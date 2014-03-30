@@ -1,5 +1,4 @@
 .header-content
-  = link_to 'Main', root_path, class: "#{current_tab(root_url)} button tiny"
-  = link_to 'articles', articles_posts_path, class: "#{current_tab(articles_posts_url)} button tiny"
-  = link_to 'travels', travels_posts_path, class: "#{current_tab(travels_posts_url)} button tiny"
-  = link_to 'photos', photos_posts_path, class: "#{current_tab(photos_posts_url)} button tiny"
+  = link_to 'Головна', root_path, class: "#{current_tab(root_url)}"
+  = link_to 'Дописи', articles_posts_path, class: "#{current_tab(articles_posts_url)}"
+  = link_to 'Подорожі', travels_posts_path, class: "#{current_tab(travels_posts_url)}"
