@@ -11,23 +11,24 @@ html lang="en"
   body
     .background
     .wrapper
+      = render 'shared/top_header'
       = render 'shared/flash'
-      header
-        - if wants_header
-          = render 'shared/header'
-          = render 'shared/header_menu'
-      .container
-        .main
-          .row
-            = yield
-        - if wants_menu
-          .menu
-            = render 'shared/search'
-            = render 'shared/categories', :hubs => @categories
-      .clearfix
-      - if allow_slider
-        .slider
-          | NEW FEATURE
+      .inner-wrapper  
+        header
+          - if wants_header
+            = render 'shared/header'
+            = render 'shared/header_menu'
+        .container
+          .main
+            .row
+              = yield
+          - if wants_menu
+            .menu
+              = render 'shared/categories', :hubs => @categories
+        .clearfix
+        - if allow_slider
+          .slider
+            | NEW FEATURE
       .main_footer
     .footer
       = debug params

@@ -5,4 +5,4 @@ span
     = link_to hub.title, hub, class: current_hub(hub_path(hub))
   - if hub.children.any?
     span.hub_clid
-      = render 'shared/hubs_tree', :hubs => hub.children
+      = render 'shared/categories', :hubs => hub.children

@@ -1,28 +1,50 @@
 #posts_search
-  float: left
-  margin: 0 0 12px 0
+  // float: left
+  // margin: 0 0 12px 0
   display: inline-block
   position: relative
-  border: 1px solid gray
-  height: 39px
+  // border: 1px solid gray
+  height: 20px
   input
+    padding: 0px 10px
+    height: 28px
     box-shadow: 0px !important
-    border: 0px !important
+    border: 1px solid #777
     float: left
     width: 200px
     margin: inherit
     transition: 0.4s
+    background-color: #666
     color: #008CBA
     font-weight: bold
-    font-size: 17px
+    font-size: 15px
+    border-radius: 18px
+    margin-top: -3px
     &::-moz-placeholder
       color: gray
       font-weight: normal
     &:focus
+      background-color: white
       outline: none
       box-shadow: none
-  span.search_button
-    float: left
-    img
-      height: 34px
-      width: 34px
+  // span.search_button
+  //   float: left
+  //   img
+  //     height: 34px
+  //     width: 34px
+
+
+.ui-autocomplete
+  // border-radius: 18px !important
+  background: none !important
+  border: none !important
+  li
+    a
+      border-radius: 0px !important
+      background-color: #444444 !important
+      color: white !important
+    a:hover, a.ui-state-focus
+      border-radius: 0px !important
+      background: none !important
+      background-color: #333333 !important
+      color: white !important

@@ -30,40 +30,51 @@
   position: relative
   width: 100% !important
   min-width: 1080px
-  header
-    z-index: 10
-    // background: rgba(255,255,255,0.6)
-    min-height: 150px
-    width: 1080px
-    margin: 0 auto 0
-    padding-top: 20px
-    position: relative
-    .header-content
-      margin-left: 140px
-      float: left
-      height: inherit
-      width: 620px
-      margin-right: 20px
-    .header-menu
-      border: 2px solid black
-      width: 240px
-      float: left
-  .container
+  .top-header
+    border-top: 1px solid gray
+    background-color: #333333
+    color: white
+    min-height: 40px
+    text-align: right
+  .inner-wrapper
+    min-width: 1080px
+    max-width: 1080px
+    border: 2px solid red
     margin: 0 auto
-    width: 1080px
-    .main
-      float: left
-      margin-left: 140px
-      width: 620px
-      margin-right: 20px
-    .menu
-      border: 2px solid black
-      width: 240px
-      float: left
-  .container.admin
-    .main
-      width: 100%
-      z-index: 1000
+    header
+      z-index: 10
+      // background: rgba(255,255,255,0.6)
+      min-height: 150px
+      width: 1080px
+      margin: 0 auto 0
+      padding-top: 20px
+      position: relative
+      .header-content
+        margin-left: 140px
+        float: left
+        height: inherit
+        width: 620px
+        margin-right: 20px
+      .header-menu
+        border: 2px solid black
+        width: 240px
+        float: left
+    .container
+      margin: 0 auto
+      width: 1080px
+      .main
+        float: left
+        margin-left: 140px
+        width: 620px
+        margin-right: 20px
+      .menu
+        border: 2px solid black
+        width: 240px
+        float: left
+    .container.admin
+      .main
+        width: 100%
+        z-index: 1000
 .footer
   margin-top: -120px
   border: 3px solid yellow
