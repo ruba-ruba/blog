@@ -3,9 +3,9 @@ $ ->
   $('a.close').click ->
     $('.flash').fadeOut('500')
 
-  # $("#posts_search input").keyup ->
-  #   data = $.get $("#posts_search").attr("action"), $("#posts_search").serialize(), null, "script"
-  #   false
+  $("#posts_search input").keyup ->
+    data = $.get $("#posts_search").attr("action"), $("#posts_search").serialize(), null, "script"
+    false
 
   #autocomplete search
   $("#autocomplete_search").autocomplete

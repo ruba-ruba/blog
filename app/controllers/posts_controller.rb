@@ -74,7 +74,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.includes(:hubs, :tags, :impressions).published.search(params[:search]).page(params[:page])
+    @posts = Post.includes(:hubs, :tags, :impressions).published.search(params[:search]).page(params[:page]).per(4)
     render "posts/index"
   end
 
