@@ -15,18 +15,3 @@ div class=(dom_id(post))
       = post.impressionist_count(:filter=>:session_hash)
       - unless post_show
         = link_to 'читати далі', post_path(post), class: 'button tiny'
-  .comments
-    #disqus_thread   
-      javascript:
-        // put the short name you signed up with here
-        var disqus_shortname = 'ruba-ruba'; 
-        var disqus_developer = #{ Rails.env == "production" ? '0' : '1' };
-        var disqus_title = "#{ @post.title }";
-        var disqus_url = "#{ request.url }";
-        var disqus_identifier = "#{ request.fullpath }";
-        (function() {
-          var dsq = document.createElement('script'); 
-          dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
