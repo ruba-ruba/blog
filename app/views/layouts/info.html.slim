@@ -5,6 +5,7 @@ html lang="en"
     meta content="width=(device-width,)initial-scale=1.0" name="viewport"
     title = page_title
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag 'info_layout'
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
@@ -13,24 +14,10 @@ html lang="en"
     .wrapper
       = render 'shared/top_header'
       = render 'shared/flash'
-      .inner-wrapper  
-        header
-          - if wants_header
-            = render 'shared/header'
-            = render 'shared/header_menu'
+      .inner-wrapper
         .container
-          .main
-            .row
-              = yield
-          - if wants_menu
-            .menu
-              | Категорії:
-              = render 'shared/categories', :hubs => @categories
-              = render 'shared/archive'
+          = yield
         .clearfix
-        - if allow_slider
-          .slider
-            | NEW FEATURE
       .main_footer
     .footer
       = debug params

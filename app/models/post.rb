@@ -12,7 +12,8 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :attachments
 
   published('posts')
-  default_scope { order('created_at desc') } 
+  default_scope { order('created_at desc') }
+  scope :desc, order("posts.created_at DESC") 
   scope :articles,  -> { where(content_type: 'Article') }
   scope :travels,  -> { where(content_type: 'Travel') }
   scope :photos,  -> { where(content_type: 'Photo') }

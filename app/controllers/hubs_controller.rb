@@ -2,6 +2,7 @@ class HubsController < ApplicationController
   load_and_authorize_resource
   skip_authorize_resource :only => [:index, :show]
   before_action :set_hub, only: [:show, :edit, :update, :destroy]
+  layout 'admin', :only => [:edit, :new]
  
   def index
     @hubs = Hub.published.includes(:posts).published

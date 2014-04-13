@@ -1,0 +1,10 @@
+.hubs 
+  - @hubs.each do |hub|
+    .hub
+      .hub_name
+        = hub.title
+      .posts_links
+        - hub.posts.published.each do |post|
+          = post.title
+          = post.published
+

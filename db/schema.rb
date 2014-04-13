@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316180003) do
+ActiveRecord::Schema.define(version: 20140413062419) do
 
   create_table "attachments", force: true do |t|
     t.string   "type"
@@ -102,15 +102,10 @@ ActiveRecord::Schema.define(version: 20140316180003) do
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
-
   create_table "roles_users", id: false, force: true do |t|
     t.integer "role_id"
     t.integer "user_id"
   end
-
-  add_index "roles_users", ["role_id"], name: "index_roles_users_on_role_id", using: :btree
-  add_index "roles_users", ["user_id"], name: "index_roles_users_on_user_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
@@ -125,7 +120,8 @@ ActiveRecord::Schema.define(version: 20140316180003) do
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
 
   create_table "tags", force: true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "taggings_count", default: 0
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree

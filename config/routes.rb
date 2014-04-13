@@ -22,7 +22,8 @@ Blog::Application.routes.draw do
   match '/autocomplete', to: 'posts#autocomplete', via: [:get, :post]
 
   # info controller
-  get '/info/site_map' => 'home#site_map'
+  get '/home/map' => 'home#map'
+  get '/home/archive'  => 'home#archive'
 
   # acts as taggable on gem
   get 'tags/:tag', to: 'posts#index', as: :tag

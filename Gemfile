@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.4'
 gem 'pg'
 gem 'mysql2'
 
@@ -9,13 +9,15 @@ gem 'jquery-rails'
 gem 'jquery-cookie-rails'
 gem 'jquery-ui-rails'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '4.0.3'
 gem 'compass-rails'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'sprockets', '~> 2.8', '<= 2.11.0'
+gem 'sprockets-rails'
 
 
 gem 'thin'

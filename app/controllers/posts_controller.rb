@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.includes(:hubs, :tags, :impressions).published.page(params[:page]).per(4)
     end
+    render :stream => true
   end
 
   def articles
