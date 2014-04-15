@@ -32,4 +32,12 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def previous
+    Post.where("id < ?", id).first
+  end
+  
+  def next
+    Post.where("id > ?", id).first
+  end
+
 end

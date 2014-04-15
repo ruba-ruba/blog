@@ -2,3 +2,10 @@
   = render 'post', post: @post
 .comments
   = render 'posts/comments'
+
+.post-siblings
+  - if @post.previous
+    .prev= link_to '&#10096;'.html_safe, post_path(@post.previous)
+  - if @post.next
+    .next= link_to '&#10097;'.html_safe, post_path(@post.next)
+

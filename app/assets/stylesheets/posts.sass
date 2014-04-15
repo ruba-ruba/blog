@@ -1,3 +1,17 @@
+$prev-next-height: 50px
+$prev-next-width:  50px
+@mixin base_siblings_link
+  height: $prev-next-width
+  width: $prev-next-height
+  top: 50%
+  position: fixed
+  font-size: 30px
+  overflow: hidden
+@mixin opacity($val)
+  opacity: $val
+@mixin transition($val)
+  transition: $val
+
 .posts
   position: relative
   border: 1px solid green
@@ -32,4 +46,27 @@
         text-align: right
         .button
           margin: 0px
-        
+
+.post-siblings
+  .prev
+    @include opacity(0.2)
+    @include base_siblings_link
+    background-color: #0A072D
+    left: 0
+    padding: 7px 10px
+    &:hover
+      @include transition(0.4s)
+      @include opacity(1)
+    a
+      color: white
+  .next
+    @include opacity(0.2)
+    @include base_siblings_link
+    background-color: #0A072D
+    right: 0
+    padding: 7px 12px
+    &:hover
+      @include transition(0.4s)
+      @include opacity(1)
+    a
+      color: white
