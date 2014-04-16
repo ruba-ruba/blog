@@ -1,18 +1,23 @@
 $prev-next-height: 50px
 $prev-next-width:  50px
-@mixin base_siblings_link
+@mixin base_siblings_div
   height: $prev-next-width
   width: $prev-next-height
   top: 50%
   position: fixed
   font-size: 30px
   overflow: hidden
+@mixin base_siblings_link
+  display: block
+  height: $prev-next-height
+  width: $prev-next-width
+  color: white
 @mixin opacity($val)
   opacity: $val
 @mixin transition($val)
   transition: $val
 
-.posts
+.posts, .post-show
   position: relative
   border: 1px solid green
   div[class^="post_"]
@@ -50,23 +55,26 @@ $prev-next-width:  50px
 .post-siblings
   .prev
     @include opacity(0.2)
-    @include base_siblings_link
+    @include base_siblings_div
+    @include transition(0.4s)
     background-color: #0A072D
     left: 0
-    padding: 7px 10px
     &:hover
       @include transition(0.4s)
-      @include opacity(1)
+      @include opacity(0.9)
     a
-      color: white
+      @include base_siblings_link
+      padding: 7px 10px
   .next
     @include opacity(0.2)
-    @include base_siblings_link
+    @include base_siblings_div
     background-color: #0A072D
+    @include transition(0.4s)
     right: 0
-    padding: 7px 12px
     &:hover
       @include transition(0.4s)
-      @include opacity(1)
+      @include opacity(0.9)
     a
-      color: white
+      @include base_siblings_link
+      padding: 7px 12px
+
