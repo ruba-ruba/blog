@@ -51,7 +51,7 @@ html{
     background-position: 50%;
     visibility: visible;
     position: relative;
-    background-color: silver;
+    background-color: #D4D4DA;
     -webkit-transform: rotate(-60deg);
        -moz-transform: rotate(-60deg);
          -o-transform: rotate(-60deg);
@@ -79,7 +79,7 @@ span.logo-separator{
 }
 
 span.logo-text{
-  color: silver;
+  color: #D4D4DA;
 }
 
 .hexagon2 {
@@ -87,3 +87,4 @@ span.logo-text{
     height: 150px;
     margin: -30px 0 0 0;
     }
+

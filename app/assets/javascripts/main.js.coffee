@@ -41,6 +41,9 @@ $ ->
   $('.menu').css
     'height':height+'px'
 
+  $('.hexagon-in2').click ->
+    window.location = '/'
+
 
 
 

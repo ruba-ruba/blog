@@ -5,7 +5,7 @@
 
 .post-siblings
   - if @post.previous
-    .prev= link_to '&#10096;'.html_safe, post_path(@post.previous)
+    .prev= link_to '&#8626;'.html_safe, post_path(@post.previous)
   - if @post.next
-    .next= link_to '&#10097;'.html_safe, post_path(@post.next)
+    .next= link_to '&#8625;'.html_safe, post_path(@post.next)
 
