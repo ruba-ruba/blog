@@ -59,6 +59,7 @@ html{
     }
 .hexagon-in2:hover {
   background-color: #0A072D;
+  transition: 0.4s;
     }
 .hexagon-in2 > span.logo {
   position: absolute;
@@ -66,6 +67,11 @@ html{
   left: 4px;
   font-size: 36px;
   font-family: 'Homestead Inline';
+}
+
+.hexagon-in2:hover > span > span{
+  transition: 0.4s;
+  color: white;
 }
 
 span.logo-separator{
@@ -79,5 +85,5 @@ span.logo-text{
 .hexagon2 {
     width: 75px;
     height: 150px;
-    margin: -24px 0 0 0;
+    margin: -30px 0 0 0;
     }
