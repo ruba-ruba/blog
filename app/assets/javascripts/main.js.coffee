@@ -11,9 +11,9 @@ $ ->
   $("#autocomplete_search").autocomplete
     source: '/autocomplete'
 
-  # trigger search form
-    $('span.search_button').click ->
-      $('#posts_search').submit()
+  #trigger search form
+  $('span.search_button').click ->
+    $('#posts_search').submit()
 
 
   # toggle input field width
@@ -22,19 +22,19 @@ $ ->
     if value.length > 0
       $(this).css
         'transition':'0.4s',
-        'width':'200px',
-        'background-color':'white'
+        # 'width':'200px',
+        # 'background-color':'white'
     else
       $(this).css
         'transition':'0.4s',
-        'width':'150px',
-        'background-color':'#666'
+        # 'width':'150px',
+        # 'background-color':'#666'
 
   $("#autocomplete_search").focus ->
     $(this).css
       'transition': '0.4s',
-      'width': '200px',
-      'background-color':'white'
+      # 'width': '200px',
+      # 'background-color':'white'
 
   # set height for sidebar eq to posts div
   height = $('.main').outerHeight()
@@ -47,4 +47,5 @@ $ ->
 $(window).load ->
   if $("#autocomplete_search").val().length > 0
     $("#autocomplete_search").css
-      'width': '200px'
+      # 'width': '200px'
+      # 'background-color':'white'
