@@ -13,24 +13,24 @@ html lang="en"
     .wrapper
       = render 'shared/top_header'
       = render 'shared/flash'
-      .inner-wrapper  
+      - if wants_header
         header
-          - if wants_header
-            = render 'shared/header'
-            = render 'shared/header_menu'
+          = render 'shared/header'
+      .cutted-wrapper
         .container
           .main
             = yield
         .clearfix
-        - if allow_slider
-          .slider
-            | NEW FEATURE
-        clearfix
-        - if wants_menu
-          .categories
-            | Категорії:
-            = render 'shared/categories', :hubs => @categories
-            = render 'shared/archive'
+      - if allow_slider
+        .slider
+          | SLIDER HERE
+        .clearfix
+      - if wants_menu
+        .categories
+          | Категорії:
+          = render 'shared/categories', :hubs => @categories
+        .clearfix
       .main_footer
     .footer
-      = render 'shared/footer'
+      .cutted-wrapper
+        = render 'shared/footer'
