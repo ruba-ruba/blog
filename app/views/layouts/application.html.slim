@@ -20,17 +20,17 @@ html lang="en"
             = render 'shared/header_menu'
         .container
           .main
-            .row
-              = yield
-          - if wants_menu
-            .menu
-              | Категорії:
-              = render 'shared/categories', :hubs => @categories
-              = render 'shared/archive'
+            = yield
         .clearfix
         - if allow_slider
           .slider
             | NEW FEATURE
+        clearfix
+        - if wants_menu
+          .categories
+            | Категорії:
+            = render 'shared/categories', :hubs => @categories
+            = render 'shared/archive'
       .main_footer
     .footer
       = render 'shared/footer'

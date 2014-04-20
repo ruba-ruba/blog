@@ -10,13 +10,12 @@
  *
  *= require_self
  *= require jquery.ui.all
- *= require main.css.sass
+ *= require base
  *= require foundation_and_overrides
- *= require admin/admin.sass
- *= require posts.sass
- *= require hubs.sass
- *= require search.sass
- *= require fonts.sass
+ *= require posts
+ *= require hubs
+ *= require search
+ *= require fonts
  */
 
 

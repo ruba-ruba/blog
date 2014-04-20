@@ -5,6 +5,7 @@ html lang="en"
     meta content="width=(device-width,)initial-scale=1.0" name="viewport"
     title = page_title
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "admin/admin", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
@@ -14,8 +15,7 @@ html lang="en"
       = render 'shared/admin_pannel'
       .container.admin
         .main
-          .row
-            = yield
+          = yield
       .main_footer
     .footer
       = render 'shared/footer'
