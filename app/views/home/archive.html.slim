@@ -4,8 +4,8 @@
       .year_number
         = year.strftime('%Y')
       .posts_links
-        - posts.group_by { |t| t.created_at.beginning_of_month }.each do |month, posts|
-          = month.strftime('%B')
+        - posts.group_by { |t| t.created_at.beginning_of_month }.each do |date, posts|
+          = I18n.l date, :format => "%B"
           - posts.each do |post|
             = link_to post.title, post
             br

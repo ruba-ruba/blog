@@ -36,11 +36,12 @@ $ ->
       # 'width': '200px',
       # 'background-color':'white'
 
-  # set height for sidebar eq to posts div
-  height = $('.main').outerHeight()
-  $('.menu').css
-    'height':height+'px'
+  # # set height for sidebar eq to posts div
+  # height = $('.main').outerHeight()
+  # $('.menu').css
+  #   'height':height+'px'
 
+  # logo to home
   $('.hexagon-in2').click ->
     window.location = '/'
 

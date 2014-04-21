@@ -17,6 +17,9 @@ module Blog
     # CKEditor 
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 
+    #locale
+    config.i18n.locale = :ua
+
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       g.test_framework :rspec, fixture: true

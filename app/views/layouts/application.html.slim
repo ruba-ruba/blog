@@ -3,6 +3,7 @@ html lang="en"
   head
     meta charset="utf-8"
     meta content="width=(device-width,)initial-scale=1.0" name="viewport"
+    = favicon_link_tag 'favicon.ico'
     title = page_title
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
@@ -15,7 +16,8 @@ html lang="en"
       = render 'shared/flash'
       - if wants_header
         header
-          = render 'shared/header'
+          .cutted-wrapper
+            = render 'shared/header'
       .cutted-wrapper
         .container
           .main

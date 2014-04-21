@@ -1,0 +1,10 @@
+ua:
+  defaults: &defaults
+    month_names:
+      [~, Січень, Лютий, Березень, Квітень, Травень, Червень, Липень, Серпень, Вересень, Жовтень, Листопад, Грудень]
+    formats:
+      default: "%d. %B %Y"
+  date:
+    <<: *defaults
+  time:
+    <<: *defaults
