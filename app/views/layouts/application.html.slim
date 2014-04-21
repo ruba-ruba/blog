@@ -21,14 +21,16 @@ html lang="en"
           .main
             = yield
         .clearfix
-      - if allow_slider
-        .slider
-          | SLIDER HERE
+      - if best_posts
+        .best-posts
+          .cutted-wrapper
+            = render 'posts/best'
         .clearfix
       - if wants_menu
         .categories
-          | Категорії:
-          = render 'shared/categories', :hubs => @categories
+          .cutted-wrapper
+            | Категорії:
+            = render 'shared/categories', :hubs => @categories
         .clearfix
       .main_footer
     .footer

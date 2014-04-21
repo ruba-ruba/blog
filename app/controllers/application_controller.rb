@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   include ActionView::Helpers::DateHelper
   include ApplicationHelper
   
-  before_filter :category_menu, :recent_posts
+  before_filter :category_menu, :recent_posts, :best_ever, :best_by_month, :best_by_year
   
   helper_method :current_hub, :current_tab
-  helper_method :wants_menu, :wants_header
+  helper_method :wants_menu, :wants_header, :best_posts
   helper_method :allow_slider
   helper_method :post_show
   helper_method :created
@@ -45,6 +45,10 @@ class ApplicationController < ActionController::Base
   end
 
   def wants_menu
+    true
+  end
+
+  def best_posts
     true
   end
 

@@ -1,0 +1,19 @@
+.best_monthly
+  - @best_by_month.each do |post|
+    = post.title
+    | (
+    = post.impressionist_count(:filter=>:session_hash)
+    br
+.best_yearly
+  - @best_by_year.each do |post|
+    = post.title
+    | (
+    = post.impressionist_count(:filter=>:session_hash)
+    br
+.best_ever
+  - @best_posts.each do |post|
+    = post.title
+    | (
+    = post.impressionist_count(:filter=>:session_hash)
+    br
+.clearfix
