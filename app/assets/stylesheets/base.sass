@@ -24,7 +24,6 @@
   opacity: 0.5 // just for now
 
 .cutted-wrapper
-  background: rgba(255,255,255,0.5)
   min-width: 940px
   max-width: 940px
   border: 2px solid red
@@ -46,8 +45,10 @@
     height: 100px 
     text-align: right
     .top-content
+      vertical-align: bottom
       margin: 0 auto
       width: 940px
+      height: inherit
   header
     z-index: 10
     // background: rgba(255,255,255,0.6)
@@ -74,7 +75,23 @@
 .footer
   margin-top: -120px
   border: 3px solid yellow
+  // background: url(11.jpg)
+  background: rgba(5,33,50,0.9)
   .footer-content
+    color: #CCCCCC
+    a
+      color: #1496BB
+      &:hover
+        text-decoration: underline
+.footer:after
+  background: url(11.jpg)
+  width: 100%
+  height: 120px
+  top: 0
+  left: 0
+  position: absolute
+  z-index: -1
+  content: ""
 
 // TODO:
 @media (min-width:320px)  
