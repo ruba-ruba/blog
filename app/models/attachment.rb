@@ -2,8 +2,20 @@ class Attachment < ActiveRecord::Base
 
   belongs_to :attachable, :polymorphic => true
 
-  has_attached_file :file
+  IMAGE_TYPES = ["image/jpg", "image/jpeg", "image/png"]
 
-  validates_attachment_content_type :file, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+  has_attached_file :file, 
+                    :styles => lambda{ |a| IMAGE_TYPES.include?(a.content_type) ? { :logo => "300x100#" } : {}  }
 
+  do_not_validate_attachment_file_type :file
+
+  before_create :remove_previouse_attached
+  def remove_previouse_attached
+    Attachment.where(
+    				  attachable_id: self.attachable_id,
+    				  attachable_type: self.attachable_type,
+    				  target: self.target
+    				).destroy_all
+
+  end
 end

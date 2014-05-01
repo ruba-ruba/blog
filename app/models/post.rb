@@ -3,7 +3,8 @@ class Post < ActiveRecord::Base
   is_impressionable
   acts_as_ordered_taggable
 
-  POST_TYPES = %w(Article Travel Photo) # code ? 
+  POST_TYPES       = %w(Article Travel Photo) # code ?
+  ATTACHMENT_TYPES = %w(Logo)
 
   belongs_to :user
   has_many :categorizations
@@ -41,6 +42,10 @@ class Post < ActiveRecord::Base
   
   def next
     Post.where("id > ?", id).first
+  end
+
+  def logo
+    attachments.where(target: 'Logo').first.file.url(:logo) if self.attachments.any?
   end
 
 end
