@@ -38,6 +38,9 @@ gem 'acts-as-taggable-on'
 #TODO: investigate
 gem 'mousetrap-rails'
 
+#TODO:
+gem 'coderay'
+
 
 
 #debug

@@ -20,7 +20,7 @@ div class=(dom_id(post))
   - if @post  
     .siblings
       - if @post.previous
-        .right= link_to 'previous', post_path(@post.previous)
+        .left= link_to 'previous', post_path(@post.previous)
       - if @post.next
-        .left= link_to 'next', post_path(@post.next)
+        .right= link_to 'next', post_path(@post.next)
   .clearfix

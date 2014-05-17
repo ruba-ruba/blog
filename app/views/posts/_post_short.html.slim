@@ -5,15 +5,15 @@ div class=(dom_id(post)) class=(cycle("left", "right"))
     = link_to post.title, post
   .created
     = created(post)
-  .content 
-    = post.content.html_safe
+  .description
+    = post.description
   .info
-    span.hubs
+    div.hubs
       - post.hubs.each do |hub|
         = link_to hub.title, hub_path(hub)
-    span.tags
-      = raw post.tags.map(&:name).map { |t| link_to "##{t}", tag_path(t) }.join(', ')
-    span.actions
+    div.tags
+      = raw post.tags.map(&:name).map { |t| link_to "<i class='fi-pricetag-multiple'></i> ##{t}".html_safe, tag_path(t) }.join(', ')
       = post.impressionist_count(:filter=>:session_hash)
-      = link_to 'читати далі', post_path(post), class: ''
+    div.actions
+      = link_to 'read', post_path(post), class: ''
   .clearfix

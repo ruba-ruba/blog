@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   is_impressionable
   acts_as_ordered_taggable
 
-  POST_TYPES       = %w(Article Travel Photo) # code ?
+  POST_TYPES       = %w(Article Travel Photo Code)
   ATTACHMENT_TYPES = %w(Logo)
 
   belongs_to :user
@@ -37,11 +37,11 @@ class Post < ActiveRecord::Base
   end
 
   def previous
-    Post.where("id < ?", id).first
+    Post.where(:content_type => self.content_type).where("id < ?", id).first
   end
   
   def next
-    Post.where("id > ?", id).first
+    Post.where(:content_type => self.content_type).where("id > ?", id).first
   end
 
   def logo

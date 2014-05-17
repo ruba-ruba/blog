@@ -312,6 +312,7 @@ DEPENDENCIES
   cancan
   capybara
   ckeditor
+  coderay
   coffee-rails (~> 4.0.0)
   compass-rails
   cucumber-rails

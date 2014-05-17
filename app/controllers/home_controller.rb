@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     if params[:tag]
       @posts = Post.includes(:hubs, :tags, :impressions).published.tagged_with(params[:tag]).page(params[:page]).per(6)
     else
-      @posts = Post.includes(:hubs, :tags, :impressions).published.page(params[:page]).per(4)
+      @posts = Post.includes(:hubs, :tags, :impressions).published.page(params[:page]).per(6)
     end
     render :stream => true
   end

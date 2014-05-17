@@ -25,44 +25,19 @@
 // @mixin opacity($val)
 //   opacity: $val
 
-// @mixin transition($val)
-//   transition: $val
+@mixin transition($val)
+  -webkit-transition: all $val ease-out
+  -moz-transition: all $val ease-out
+  -ms-transition: all $val ease-out
+  -o-transition: all $val ease-out
+  transition: all $val ease-out
 
-@mixin general-post-style($post-width, $post-height)
-  border: 2px solid red
-  position: relative
-  height: $post-height
-  width:  $post-width
-  margin: 13px 0px
-  .title
-    a
-      color: #3E3E29
-      font-size: 29px
-      letter-spacing: 0px
-      font-weight: bold
-      margin-bottom: 4px
-      &:hover
-        color: #808067
-  .created
-    font-size: 11px
-    color: grey
-    text-align: right
-    width: 100%
-  .content
-    font-family: 'Homestead Display' 
-    font-size: 15px
-  .info
-    position: relative
-    min-height: auto
-    .hubs
-      display: block
-    .tags
-      display: block
-    .actions
-      text-align: right
-      .button
-        margin: 0px
-
+@mixin blur($val)
+  -webkit-filter: blur($val)
+  -moz-filter: blur($val)
+  -o-filter: blur($val)
+  -ms-filter: blur($val)
+  filter: blur($val)
 
 .post-show
   position: relative
@@ -70,7 +45,38 @@
   padding: 8px
   width: 100%
   div[class^="post_"]
-    @include general-post-style(100%, auto)
+    position: relative
+    height: auto
+    width:  100%
+    margin: 13px 0px
+    .title
+      a
+        color: #3E3E29
+        font-size: 29px
+        letter-spacing: 0px
+        font-weight: bold
+        margin-bottom: 4px
+        &:hover
+          color: #808067
+    .created
+      font-size: 11px
+      color: grey
+      text-align: right
+      width: 100%
+    .content
+      font-family: 'Homestead Display' 
+      font-size: 15px
+    .info
+      position: relative
+      min-height: auto
+      .hubs
+        display: block
+      .tags
+        display: block
+      .actions
+        text-align: right
+        .button
+          margin: 0px
 
 
 .posts
@@ -79,7 +85,91 @@
   padding: 8px
   width: 100%
   div[class^="post_"]
-    @include general-post-style(440px, 400px)
+    position: relative
+    box-shadow: 2px 3px 6px 2px #555444
+    position: relative
+    height: 400px
+    width:  440px
+    margin: 13px 0px
+    &:hover
+      .logo:after
+        content: ' '
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background-color: rgba(139,139,139,0.6)
+      .title
+        position: absolute
+        text-align: center
+        width: 100%
+        top: 30px
+        height: 50px
+      .description
+        visibility: visible
+        position: absolute
+        text-align: center
+        top: 100px
+        width: 100%
+        text-align: center
+      .created
+      .description
+      .info
+        .actions
+          @include transition(0.4s)
+          background-color: #884444
+    .logo
+    .title
+      position: absolute
+      top: 200px
+      text-align: center
+      width: 100%
+      @include transition(0.4s)
+      a
+        color: #3E3E29
+        font-size: 29px
+        letter-spacing: 0px
+        font-weight: bold
+        margin-bottom: 4px
+        &:hover
+          color: #808067
+    .created
+      font-size: 11px
+      color: grey
+      text-align: right
+      width: 100%
+    .description
+      @include transition(0.4s)
+      visibility: hidden
+      position: absolute
+      width: 100%
+      text-align: center
+      top: 230px
+      font-family: 'Homestead Display' 
+      font-size: 15px
+    .info
+      width: 100%
+      bottom: 0
+      position: absolute
+      height: 150px
+      .hubs
+        display: block
+      .tags
+        display: block
+      .actions
+        width: 100%
+        height: 30px
+        background-color: #07565D
+        bottom: 0
+        position: absolute
+        text-align: center
+        &:hover
+          transition: 0.4s
+          background-color: #884444
+        a
+          color: white
+          font-size: 28px
 
 
 // great refactoring yeah, but don't need it ((
