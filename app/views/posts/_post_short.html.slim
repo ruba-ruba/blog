@@ -1,4 +1,4 @@
-div class=(dom_id(post))
+div class=(dom_id(post)) class=(cycle("left", "right"))
   .logo
     = image_tag post.logo
   .title
@@ -15,12 +15,5 @@ div class=(dom_id(post))
       = raw post.tags.map(&:name).map { |t| link_to "##{t}", tag_path(t) }.join(', ')
     span.actions
       = post.impressionist_count(:filter=>:session_hash)
-      - unless post_show
-        = link_to 'читати далі', post_path(post), class: ''
-  - if @post  
-    .siblings
-      - if @post.previous
-        .right= link_to 'previous', post_path(@post.previous)
-      - if @post.next
-        .left= link_to 'next', post_path(@post.next)
+      = link_to 'читати далі', post_path(post), class: ''
   .clearfix

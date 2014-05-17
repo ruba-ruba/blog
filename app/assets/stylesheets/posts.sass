@@ -28,46 +28,59 @@
 // @mixin transition($val)
 //   transition: $val
 
-.posts, .post-show
+@mixin general-post-style($post-width, $post-height)
+  border: 2px solid red
   position: relative
-  border: 1px solid green
-  div[class^="post_"]
-    border: 2px solid red
+  height: $post-height
+  width:  $post-width
+  margin: 13px 0px
+  .title
+    a
+      color: #3E3E29
+      font-size: 29px
+      letter-spacing: 0px
+      font-weight: bold
+      margin-bottom: 4px
+      &:hover
+        color: #808067
+  .created
+    font-size: 11px
+    color: grey
+    text-align: right
+    width: 100%
+  .content
+    font-family: 'Homestead Display' 
+    font-size: 15px
+  .info
     position: relative
-    .title
-      a
-        color: #3E3E29
-        font-size: 29px
-        letter-spacing: 0px
-        font-weight: bold
-        margin-bottom: 4px
-        &:hover
-          color: #808067
-    .created
-      font-size: 11px
-      color: grey
+    min-height: auto
+    .hubs
+      display: block
+    .tags
+      display: block
+    .actions
       text-align: right
-      width: 100%
-    .content
-      font-family: 'Homestead Display' 
-      font-size: 15px
-    .info
-      position: relative
-      min-height: auto
-      .hubs
-        display: block
-      .tags
-        display: block
-      .actions
-        text-align: right
-        .button
-          margin: 0px
+      .button
+        margin: 0px
 
-.post_siblings
-  .prev
-    float: left
-  .next
-    float: right
+
+.post-show
+  position: relative
+  display: inline-block
+  padding: 8px
+  width: 100%
+  div[class^="post_"]
+    @include general-post-style(100%, auto)
+
+
+.posts
+  position: relative
+  display: inline-block
+  padding: 8px
+  width: 100%
+  div[class^="post_"]
+    @include general-post-style(440px, 400px)
+
 
 // great refactoring yeah, but don't need it ((
 // .post_siblings

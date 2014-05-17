@@ -1,4 +1,9 @@
 .posts 
   - @posts.each do |post|
-    = render 'posts/post', post: post
-  = paginate @posts
+    = render 'posts/post_short', post: post
+  .clearfix
+  ul.pagination
+    li.left
+      = link_to_next_page @posts, "Older &raquo;".html_safe
+    li.right
+      = link_to_previous_page @posts, "&laquo; Newest".html_safe
