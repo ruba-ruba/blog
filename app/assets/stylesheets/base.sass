@@ -9,19 +9,19 @@
     margin: 0px !important
 
 .background
-  position: fixed
-  height: 100%
-  width: 100%
-  left: 0
-  right: 0
-  display: block
-  // background-image: url(home-bg.jpg)
-  background-repeat: no-repeat
-  background-size: 100% 100%
-  background-position: center top
-  background-attachment: fixed
-  z-index: -10
-  opacity: 0.5 // just for now
+  // position: fixed
+  // height: 100%
+  // width: 100%
+  // left: 0
+  // right: 0
+  // display: block
+  // background: url(12.jpg)
+  // background-size: 100% auto
+  // background-repeat:no-repeat
+  // background-attachment:fixed
+  // background-position:center
+  // z-index: -10
+  // opacity: 0.5
 
 .cutted-wrapper
   min-width: 940px
@@ -33,16 +33,16 @@
   margin: 0
   position: relative
   width: 100% !important
-  min-width: 1040px
+  min-width: 1080px
+  border: 5px solid purple
   .top-header
     // position: fixed
     // border-top: 1px solid gray
     // background-color: #333333
     // color: white
-    overflow: hidden
+    // overflow: hidden
     padding: 5px
-    border: 1px solid purple
-    height: 100px 
+    height: 75px 
     text-align: right
     .top-content
       vertical-align: bottom
@@ -51,10 +51,14 @@
       height: inherit
   header
     z-index: 10
-    // background: rgba(255,255,255,0.6)
-    border: 1px solid gray
     width: 100%
+    height: 250px
     margin: 0 auto
+    background: url(12.jpg)
+    background-size: 100% 300px
+    background-repeat:no-repeat
+    background-attachment:fixed
+    background-position:center
   .cutted-wrapper
     .container
       margin: 0 auto
@@ -75,23 +79,23 @@
 .footer
   margin-top: -120px
   border: 3px solid yellow
-  // background: url(11.jpg)
-  background: rgba(5,33,50,0.9)
+  // background: rgba(5,33,50,1)
+  background-color: #07565D
   .footer-content
     color: #CCCCCC
     a
-      color: #1496BB
+      color: white
       &:hover
         text-decoration: underline
-.footer:after
-  background: url(11.jpg)
-  width: 100%
-  height: 120px
-  top: 0
-  left: 0
-  position: absolute
-  z-index: -1
-  content: ""
+// .footer:after
+//   background: url(12.jpg)
+//   width: 100%
+//   height: 120px
+//   top: 0
+//   left: 0
+//   position: absolute
+//   z-index: -1
+//   content: ""
 
 // TODO:
 @media (min-width:320px)  

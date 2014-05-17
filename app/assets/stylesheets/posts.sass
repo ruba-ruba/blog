@@ -1,32 +1,32 @@
-$prev-next-height: 50px
-$prev-next-width:  45px
-@mixin border-radius($r1, $r2, $r3, $r4)
-  -webkit-border-radius: $r1 $r2 $r3 $r4
-  -moz-border-radius: $r1 $r2 $r3 $r4
-  -ms-border-radius: $r1 $r2 $r3 $r4
-  border-radius: $r1 $r2 $r3 $r4
+// $prev-next-height: 50px
+// $prev-next-width:  45px
+// @mixin border-radius($r1, $r2, $r3, $r4)
+//   -webkit-border-radius: $r1 $r2 $r3 $r4
+//   -moz-border-radius: $r1 $r2 $r3 $r4
+//   -ms-border-radius: $r1 $r2 $r3 $r4
+//   border-radius: $r1 $r2 $r3 $r4
 
-@mixin base_siblings_div
-  height: $prev-next-height
-  width: $prev-next-width
-  top: 50%
-  position: fixed
-  font-size: 105px
-  overflow: hidden
-  margin-top: -25px
+// @mixin base_siblings_div
+//   height: $prev-next-height
+//   width: $prev-next-width
+//   top: 50%
+//   position: fixed
+//   font-size: 105px
+//   overflow: hidden
+//   margin-top: -25px
 
-@mixin base_siblings_link
-  display: block
-  height: $prev-next-height
-  width: $prev-next-width
-  color: white
-  font-family: 'hipster Script Pro'
+// @mixin base_siblings_link
+//   display: block
+//   height: $prev-next-height
+//   width: $prev-next-width
+//   color: white
+//   font-family: 'hipster Script Pro'
 
-@mixin opacity($val)
-  opacity: $val
+// @mixin opacity($val)
+//   opacity: $val
 
-@mixin transition($val)
-  transition: $val
+// @mixin transition($val)
+//   transition: $val
 
 .posts, .post-show
   position: relative
@@ -63,44 +63,50 @@ $prev-next-width:  45px
         .button
           margin: 0px
 
-
-.post-siblings
+.post_siblings
   .prev
-    @include opacity(0.2)
-    @include base_siblings_div
-    @include transition(0.3s)
-    @include border-radius(0px, 5px, 5px, 0px) 
-    background-color: #0A072D
-    left: 0
-    &:hover
-      @include transition(0.3s)
-      @include opacity(0.9)
-      a
-        @include transition(0.3s)
-        color: white
-    a
-      @include base_siblings_link
-      margin-left: -25px
-      margin-top: -20px
-      color: silver
+    float: left
   .next
-    @include border-radius(5px, 0px, 0px, 5px) 
-    @include opacity(0.2)
-    @include base_siblings_div
-    background-color: #0A072D
-    @include transition(0.3s)
-    padding: 7px 1px
-    right: 0
-    &:hover
-      @include transition(0.3s)
-      @include opacity(0.9)
-      a
-        @include transition(0.3s)
-        color: white
-    a
-      @include base_siblings_link
-      margin-left: -20px
-      margin-top: 0px
-      color: silver
+    float: right
+
+// great refactoring yeah, but don't need it ((
+// .post_siblings
+//   .prev
+//     @include opacity(0.2)
+//     @include base_siblings_div
+//     @include transition(0.3s)
+//     @include border-radius(0px, 5px, 5px, 0px) 
+//     background-color: #0A072D
+//     left: 0
+//     &:hover
+//       @include transition(0.3s)
+//       @include opacity(0.9)
+//       a
+//         @include transition(0.3s)
+//         color: white
+//     a
+//       @include base_siblings_link
+//       margin-left: -25px
+//       margin-top: -20px
+//       color: silver
+//   .next
+//     @include border-radius(5px, 0px, 0px, 5px) 
+//     @include opacity(0.2)
+//     @include base_siblings_div
+//     background-color: #0A072D
+//     @include transition(0.3s)
+//     padding: 7px 1px
+//     right: 0
+//     &:hover
+//       @include transition(0.3s)
+//       @include opacity(0.9)
+//       a
+//         @include transition(0.3s)
+//         color: white
+//     a
+//       @include base_siblings_link
+//       margin-left: -20px
+//       margin-top: 0px
+//       color: silver
 
 

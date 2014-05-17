@@ -17,3 +17,10 @@ div class=(dom_id(post))
       = post.impressionist_count(:filter=>:session_hash)
       - unless post_show
         = link_to 'читати далі', post_path(post), class: ''
+  - if @post  
+    .post_siblings
+      - if @post.previous
+        .prev= link_to 'previous', post_path(@post.previous)
+      - if @post.next
+        .next= link_to 'next', post_path(@post.next)
+  .clearfix
