@@ -19,4 +19,17 @@ module PostsHelper
     posts.sort{|x,y| x.impressionist_count(:filter=>:session_hash) <=> y.impressionist_count(:filter=>:session_hash) }.reverse.first(5)
   end
 
+  def type_title(post)
+    case post.content_type
+    when 'Article'
+      'read'
+    when 'Travel'
+      'travel' 
+    when 'Photo'
+      'see' 
+    when 'Code'
+      'study'
+    end
+  end
+
 end

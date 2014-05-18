@@ -95,6 +95,7 @@
     width:  440px
     margin: 13px 0px
     overflow: hidden
+    @include transition(0.4s)
     &:hover
       @include transition(0.4s)
       -moz-transform: scale(1.1)
@@ -102,7 +103,7 @@
       box-shadow: 5px 5px 8px 4px #555444
       .logo
         img
-          margin-top: 0px
+          margin-top: -38px
       .logo:after
         content: ' '
         position: absolute
@@ -151,7 +152,7 @@
         margin-top: 0px
     .title
       position: absolute
-      top: 210px
+      top: 250px
       text-align: center
       width: 100%
       @include transition(0.4s)
@@ -183,6 +184,9 @@
       padding: 12px 5px 0px 5px
       color: #3E3E29
       @include transition(0.4s)
+      .left, .right
+        &:hover
+          color: white
     .info
       width: 100%
       bottom: 0
@@ -205,7 +209,7 @@
           @include transition(0.5s)
           border-radius: 3px
           &:hover
-            background-color: #884444 //#07565D
+            // background-color: #884444 //#07565D
             a
               color: white
           a
@@ -228,7 +232,7 @@
           @include transition(0.5s)
           border-radius: 3px
           &:hover
-            background-color: #884444 //#07565D
+            // background-color: #884444 //#07565D
             a
               color: white
           a
@@ -249,8 +253,21 @@
           background-color: #884444
         a
           font-family: 'hipster Script Pro'
+          color: silver
+          font-size: 46px
+          &:hover
+            color: white
+  .pagination
+    .left, .right
+      font-size: 20px
+      color: #3E3E29
+      a
+        @include transition(0.4s)
+      &:hover
+        a
+          @include transition(0.4s)
+          background-color: #07565D !important
           color: white
-          font-size: 48px
 
 
 // great refactoring yeah, but don't need it ((

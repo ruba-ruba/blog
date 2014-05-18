@@ -18,5 +18,5 @@ div class=(dom_id(post)) class=(cycle("left", "right"))
         .tag
           = link_to "<i class='fi-pricetag-multiple'></i> #{t}".html_safe, tag_path(t)
     div.actions
-      = link_to 'read', post_path(post), class: 'read_post_link'
+      = link_to type_title(post), post_path(post), class: 'read_post_link'
   .clearfix
