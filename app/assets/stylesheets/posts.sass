@@ -39,6 +39,8 @@
   -ms-filter: blur($val)
   filter: blur($val)
 
+
+// describe show page
 .post-show
   position: relative
   display: inline-block
@@ -79,10 +81,11 @@
           margin: 0px
 
 
+
+//  describe index page
 .posts
   position: relative
   display: inline-block
-  padding: 8px
   width: 100%
   div[class^="post_"]
     position: relative
@@ -91,38 +94,64 @@
     height: 400px
     width:  440px
     margin: 13px 0px
+    overflow: hidden
     &:hover
+      @include transition(0.4s)
+      -moz-transform: scale(1.1)
+      z-index: 100
+      box-shadow: 5px 5px 8px 4px #555444
+      .logo
+        img
+          margin-top: 0px
       .logo:after
         content: ' '
         position: absolute
         left: 0
         right: 0
         top: 0
-        bottom: 0
-        background-color: rgba(139,139,139,0.6)
+        bottom: 40px
+        background-color: rgba(73,89,87,0.8)
       .title
+        color: white
         position: absolute
         text-align: center
         width: 100%
-        top: 30px
+        top: 140px
         height: 50px
+        a
+          color: white
+          &:hover
+            color: white
+            text-decoration: underline
       .description
+        color: white
         visibility: visible
         position: absolute
         text-align: center
-        top: 100px
+        top: 20px
         width: 100%
         text-align: center
       .created
-      .description
+        bottom: 120px
+        border-top: 1px solid silver
       .info
+        .hubs
+          bottom: 80px
+        .tags
+          bottom: 40px
+          width: 100%
         .actions
+          height: 40px
+          padding-top: 5px
           @include transition(0.4s)
-          background-color: #884444
+          background-color: #884444 //#07565D
     .logo
+      img
+        @include transition(0.4s)
+        margin-top: 0px
     .title
       position: absolute
-      top: 200px
+      top: 210px
       text-align: center
       width: 100%
       @include transition(0.4s)
@@ -131,35 +160,86 @@
         font-size: 29px
         letter-spacing: 0px
         font-weight: bold
+        font-family: 'festus', 'Lintel'
         margin-bottom: 4px
         &:hover
           color: #808067
-    .created
-      font-size: 11px
-      color: grey
-      text-align: right
-      width: 100%
+      
     .description
       @include transition(0.4s)
       visibility: hidden
       position: absolute
       width: 100%
       text-align: center
-      top: 230px
-      font-family: 'Homestead Display' 
-      font-size: 15px
+      top: -100px
+      font-family: 'festus'
+      font-size: 28px
+    .created
+      text-align: right
+      width: 100%
+      bottom: 40px
+      height: 40px
+      position: absolute
+      padding: 12px 5px 0px 5px
+      color: #3E3E29
+      @include transition(0.4s)
     .info
       width: 100%
       bottom: 0
       position: absolute
       height: 150px
       .hubs
-        display: block
+        @include transition(0.4s)
+        width: 100%
+        bottom: 0px
+        height: 40px
+        position: absolute
+        padding-top: 7px
+        border-bottom: 1px solid silver
+        border-top: 1px solid silver
+        .hub
+          overflow: hidden
+          padding: 0px 4px 3px 4px
+          margin: 0 2px 40px 2px
+          display: inline-block
+          @include transition(0.5s)
+          border-radius: 3px
+          &:hover
+            background-color: #884444 //#07565D
+            a
+              color: white
+          a
+            position: relative
+            color: #3E3E29
+            i
+              font-size: 22px
       .tags
-        display: block
+        @include transition(0.4s)
+        width: 100%
+        bottom: 0px
+        height: 40px
+        position: absolute
+        padding-top: 7px
+        .tag
+          overflow: hidden
+          padding: 0px 4px 3px 4px
+          margin: 0 2px 40px 2px
+          display: inline-block
+          @include transition(0.5s)
+          border-radius: 3px
+          &:hover
+            background-color: #884444 //#07565D
+            a
+              color: white
+          a
+            position: relative
+            color: #3E3E29
+            i
+              font-size: 22px
       .actions
         width: 100%
-        height: 30px
+        height: 40px
+        padding-top: 5px
         background-color: #07565D
         bottom: 0
         position: absolute
@@ -168,8 +248,9 @@
           transition: 0.4s
           background-color: #884444
         a
+          font-family: 'hipster Script Pro'
           color: white
-          font-size: 28px
+          font-size: 48px
 
 
 // great refactoring yeah, but don't need it ((
