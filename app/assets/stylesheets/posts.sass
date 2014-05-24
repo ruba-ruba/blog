@@ -39,6 +39,11 @@
   -ms-filter: blur($val)
   filter: blur($val)
 
+@mixin scale($scale)
+  -webkit-transform: scale($scale)
+  -ms-transform: scale($scale)
+  transform: scale($scale)
+
 
 // describe show page
 .post-show
@@ -97,8 +102,8 @@
     overflow: hidden
     @include transition(0.4s)
     &:hover
+      @include scale(1.1)
       @include transition(0.4s)
-      -moz-transform: scale(1.1)
       z-index: 100
       box-shadow: 5px 5px 8px 4px #555444
       .logo
@@ -135,6 +140,8 @@
       .created
         bottom: 120px
         border-top: 1px solid silver
+        a
+          color: #3E3E29
       .info
         .hubs
           bottom: 80px
@@ -185,8 +192,12 @@
       color: #3E3E29
       @include transition(0.4s)
       .left, .right
-        &:hover
-          color: white
+        a
+          color: #3E3E29
+        .text, a
+          margin-right: 5px
+          &:hover
+            color: white
     .info
       width: 100%
       bottom: 0

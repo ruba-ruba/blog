@@ -7,8 +7,13 @@ div class=(dom_id(post)) class=(cycle("left", "right"))
     = post.description
   .info
     .created
-      .left = "<i class='fi-eye'></i> #{post.impressionist_count(:filter=>:session_hash)}".html_safe
-      .right= "<i class='fi-clock'></i> #{created(post)}".html_safe
+      .left
+        span.text
+          = "<i class='fi-eye'> #{post.impressionist_count(:filter=>:session_hash)} </i> ".html_safe
+        = link_to("count", post_path(post, :anchor => "disqus_thread"))
+      .right
+        .span.text
+          = "<i class='fi-clock'></i> #{created(post)}".html_safe
     div.hubs
       - post.hubs.each do |hub|
         .hub
