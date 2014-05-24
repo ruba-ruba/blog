@@ -21,6 +21,7 @@ html lang="en"
       .cutted-wrapper
         .container
           .main
+            = render 'shared/nav'
             = yield
         .clearfix
       - if best_posts
