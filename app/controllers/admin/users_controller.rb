@@ -1,6 +1,6 @@
-class Admin::UsersController < ApplicationController
-  load_and_authorize_resource
-  before_action :set_hub, only: [:edit, :update]
+class Admin::UsersController < Admin::AdminController
+  load_and_authorize_resource class: Admin::UsersController
+  before_action :set_user, only: [:edit, :update]
 
   def edit
   end
@@ -15,7 +15,7 @@ class Admin::UsersController < ApplicationController
 
   private
 
-  def set_hub
+  def set_user
     @user = User.find params[:id] 
   end
 

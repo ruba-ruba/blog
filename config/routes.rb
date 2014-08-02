@@ -1,16 +1,19 @@
 Blog::Application.routes.draw do
   
+  devise_for :users, :controllers => { :registrations => "registrations" }
+  namespace :admin do
+    get 'backgrounds' => 'backgrounds#index'
+    get 'backgrounds/new' => 'backgrounds#new'
+    resources :users
+    get '/' => 'manage#index'
+  end
+
   get "home/index"
   mount Ckeditor::Engine => '/ckeditor'
   
   root 'home#index'
 
-  devise_for :users, :controllers => { :registrations => "registrations" }
-  namespace :admin do
-    resources :users
-    get '/' => 'manage#index'
-  end
-  
+  # blog
   resources :hubs, :path => "categories"
   resources :posts do
     collection do

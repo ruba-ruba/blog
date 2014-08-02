@@ -28,9 +28,9 @@ class ApplicationController < ActionController::Base
   def page_title
     base = 'Mykhailo Rybak Blog'
     case
-    when @post
+    when @post && @post.title.present?
       "#{@post.title} | #{base}"
-    when @hub
+    when @hub && @hub.title.present?
       "#{@hub.title} | #{base}"
     else
       base

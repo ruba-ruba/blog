@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140802122617) do
+ActiveRecord::Schema.define(version: 20140802124734) do
 
   create_table "attachments", force: true do |t|
     t.string   "type"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20140802122617) do
     t.string   "attachable_id"
     t.string   "attachable_type"
     t.string   "target"
+  end
+
+  create_table "backgrounds", force: true do |t|
+    t.string   "target"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "categorizations", force: true do |t|

@@ -6,6 +6,7 @@
       = link_to 'Logout', destroy_user_session_path, :method => :delete, class: "button small"
       = link_to 'add Post', new_post_path, class: 'button small'
       = link_to 'add Hub', new_hub_path, class: 'button small'
+      = link_to 'Backgrounds', admin_backgrounds_path, class: 'button small'
     - else
       = link_to 'Sign In', new_user_session_path, class: "button small"
 

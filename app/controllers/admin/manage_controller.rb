@@ -1,7 +1,5 @@
-class Admin::ManageController < ApplicationController
-  authorize_resource :class => :false
-  layout 'admin'
-  
+class Admin::ManageController < Admin::AdminController 
+  load_and_authorize_resource class: Admin::ManageController
   def index
     @hubs = Hub.includes(:posts).all
   end
