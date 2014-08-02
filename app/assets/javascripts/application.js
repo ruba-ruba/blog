@@ -23,9 +23,9 @@
 // files
 //= require main.js.coffee
 
-
 $(function(){ $(document).foundation(); });
 
-$( document ).ready(function() {
+
+$(document).ready(function(){
 
 });

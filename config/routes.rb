@@ -2,8 +2,7 @@ Blog::Application.routes.draw do
   
   devise_for :users, :controllers => { :registrations => "registrations" }
   namespace :admin do
-    get 'backgrounds' => 'backgrounds#index'
-    get 'backgrounds/new' => 'backgrounds#new'
+    resources :backgrounds
     resources :users
     get '/' => 'manage#index'
   end

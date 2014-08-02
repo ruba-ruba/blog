@@ -1,2 +1,10 @@
-h1 Admin::Backgrounds#new
-p Find me in app/views/admin/backgrounds/new.html.slim
+= simple_form_for [:admin, @background], html: { class: 'form-horizontal', multipart: true} do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :target, :collection => Background::BECKGROUND_TYPES, include_blank: false
+    = f.input :active, as: :radio_buttons
+    = f.file_field :image
+
+  .form-actions
+    = f.button :submit

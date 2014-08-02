@@ -1,2 +1,12 @@
-h1 Admin::Backgrounds#index
-p Find me in app/views/admin/backgrounds/index.html.slim
+table.admin
+  tr
+    td File Name
+    td Target
+    td Active
+    td Deactivate
+  - @backgrounds.each do |background|
+    tr
+      td= background.image_file_name
+      td= background.target
+      td= background.active
+      td= link_to 'deactivate', '#'

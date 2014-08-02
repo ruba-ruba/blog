@@ -1,9 +1,11 @@
 class Admin::BackgroundsController < Admin::AdminController
-  load_and_authorize_resource class: Admin::BackgroundsController
-  def index
-  end
+  # load_and_authorize_resource class: Admin::BackgroundsController
+  inherit_resources
+  actions :index, :new, :create
 
-  def new
+  private
+  def background_params
+    params.require(:background).permit!
   end
 
 end
