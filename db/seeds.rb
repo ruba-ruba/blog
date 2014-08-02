@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
  
   Role.create([{:name => 'user'}, {:name => 'admin'}])
+  User.create([{:email =>'admin@admin.com', password: '123456', password_confirmation: '123456'}])
+  User.first.roles << Role.find_by_name('admin')

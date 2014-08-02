@@ -19,6 +19,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sprockets', '~> 2.8'
 gem 'sprockets-rails'
+gem 'inherited_resources'
+gem 'has_scope'
 
 
 gem 'thin'

@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   include BlogMethods
   is_impressionable
-  acts_as_ordered_taggable
+  acts_as_taggable_on :tags
 
   POST_TYPES       = %w(Article Travel Photo Code)
   ATTACHMENT_TYPES = %w(Logo)
