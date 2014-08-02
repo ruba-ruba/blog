@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.4'
 gem 'pg'
 gem 'mysql2'
 
-# defaults
+#defaults
 gem 'jquery-rails'
 gem 'jquery-cookie-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '4.0.3'
 gem 'compass-rails'
@@ -16,8 +16,8 @@ gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
-gem 'sprockets', '~> 2.8', '<= 2.11.0'
+gem 'jbuilder', '~> 2.0'
+gem 'sprockets', '~> 2.8'
 gem 'sprockets-rails'
 
 
@@ -44,14 +44,13 @@ gem 'coderay'
 
 
 
-#debug
+# #debug
 gem 'better_errors'
 gem 'pry'
 gem 'pry-rails'
 gem 'pry-stack_explorer'
-gem 'pry-debugger'
 
-#test
+# #test
 gem 'rspec-rails'
 gem 'simplecov', :require => false
 gem 'simplecov-rcov', :require => false
@@ -79,6 +78,3 @@ end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]

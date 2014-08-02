@@ -13,11 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require mousetrap
-//= require jquery.ui.all
+//= require jquery-ui
 //= require jquery.cookie
 //= require turbolinks
 //= require foundation
-//= require ckeditor/override
+//= #require ckeditor/override
 //= require ckeditor/init
 
 // files
