@@ -1,7 +1,7 @@
 .carousel-wrapper
   .carousel
-    - Background.all.each do |background|
-      div style="background-image:url(#{background.image.url})"
+    - Background.limit(1).each do |background|
+      div style="background-image:url(#{background.image.url(:header)})"
         | &nbsp;
 
   

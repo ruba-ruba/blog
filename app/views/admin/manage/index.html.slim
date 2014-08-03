@@ -20,5 +20,5 @@ table.admin
           td = link_to post.title, post
           td = post.published
           td = post.impressionist_count(:filter=>:session_hash)
-          td = link_to 'Edit', edit_post_path(post)
+          td = link_to 'Edit', [:edit, :admin, post]
           td = link_to 'Destroy', post, data: {:confirm => 'Are you sure?'}, :method => :delete

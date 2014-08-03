@@ -4,6 +4,7 @@ Blog::Application.routes.draw do
   namespace :admin do
     resources :backgrounds
     resources :users
+    resources :posts, except: :show
     get '/' => 'manage#index'
   end
 
@@ -14,7 +15,7 @@ Blog::Application.routes.draw do
 
   # blog
   resources :hubs, :path => "categories"
-  resources :posts do
+  resources :posts, only: [:index, :show] do
     collection do
       get 'search' => 'posts#search'
       get 'articles' => 'posts#articles'

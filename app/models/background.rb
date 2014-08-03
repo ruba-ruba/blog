@@ -10,7 +10,7 @@ class Background < ActiveRecord::Base
   def self.image_size(image)
     case image.instance.target
     when 'HeaderBackground'
-      { :logo => "1140x250#" }
+      { :header => "920x250#" }
     end 
   end
 end
