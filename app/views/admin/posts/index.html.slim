@@ -8,6 +8,10 @@ table.admin
   - @posts.each do |post|
     tr data={publised: post.published.to_s}
       td 
+        ul
+          - post.hubs.each do |hub|
+            li
+              = hub.title
       td = link_to post.title, post
       td = post.published
       td = post.impressionist_count(:filter=>:session_hash)

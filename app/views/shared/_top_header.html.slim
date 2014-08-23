@@ -1,8 +1,12 @@
 .top-header 
   .cutted-wrapper
     .left
-      = link_to 'home', root_path, class: 'button small'
-      = link_to 'about', '#', class: 'button small'
+      .nav
+        .buttons
+          = link_to 'home', root_path
+          = link_to 'about', '#'
+          = link_to 'archive',  home_archive_path
+          = link_to 'map',  home_map_path
     .hexagon.hexagon2
       .hexagon-in1
         .hexagon-in2
@@ -13,6 +17,3 @@
               | /
             span.logo-text
               | R
-    .right
-      = link_to 'archive',  home_archive_path, class: 'button small'
-      = link_to 'map',  home_map_path,  class: 'button small'

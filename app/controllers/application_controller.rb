@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :category_menu, :recent_posts, :best_ever, :best_by_month, :best_by_year
   
   helper_method :current_hub, :current_tab
-  helper_method :wants_menu, :wants_header, :best_posts
+  helper_method :show_header?, :show_categories?, :show_best_posts?
   helper_method :allow_slider
   helper_method :post_show
   helper_method :created
@@ -38,18 +38,18 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def wants_header
+  def show_header?
     # %w(posts hubs).include?(controller_name) && %w(index show search).include?(action_name) 
     #todo investigate another way to do this shit
     true
   end
 
-  def wants_menu
-    true
+  def show_categories?
+    false
   end
 
-  def best_posts
-    true
+  def show_best_posts?
+    false
   end
 
   def post_show

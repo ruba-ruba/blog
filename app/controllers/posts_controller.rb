@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
   impressionist :actions=>[:show]
-  before_action :set_post, only: [:show]
   before_action :pass_data, only: [:articles, :travels, :photos]
   
   def index
@@ -28,6 +27,7 @@ class PostsController < ApplicationController
 
 
   def show
+    @post = Post.includes(:hubs, :tags, :impressions).find(params[:id])
   end
 
   def search
@@ -40,8 +40,4 @@ class PostsController < ApplicationController
     render :json => posts
   end
 
-  private
-    def set_post
-      @post = Post.includes(:hubs, :tags, :impressions).find(params[:id])
-    end
 end

@@ -14,7 +14,7 @@ html lang="en"
     .wrapper
       = render 'shared/flash'
       = render 'shared/top_header'
-      - if wants_header
+      - if show_header?
         header
           .cutted-wrapper
             = render 'shared/header'
@@ -24,12 +24,12 @@ html lang="en"
             = render 'shared/nav'
             = yield
         .clearfix
-      - if best_posts
+      - if show_best_posts?
         .best-posts
           .cutted-wrapper
             = render 'posts/best'
         .clearfix
-      - if wants_menu
+      - if show_categories?
         .categories
           .cutted-wrapper
             | Категорії:
