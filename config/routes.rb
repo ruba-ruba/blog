@@ -5,6 +5,7 @@ Blog::Application.routes.draw do
     resources :backgrounds
     resources :users
     resources :posts, except: :show
+    resources :hubs,  except: :show, :path => "categories"
     get '/' => 'manage#index'
   end
 
@@ -14,7 +15,7 @@ Blog::Application.routes.draw do
   root 'home#index'
 
   # blog
-  resources :hubs, :path => "categories"
+  resources :hubs, only: [:index, :show], :path => "categories"
   resources :posts, only: [:index, :show] do
     collection do
       get 'search' => 'posts#search'

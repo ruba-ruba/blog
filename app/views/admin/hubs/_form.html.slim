@@ -1,4 +1,4 @@
-= simple_form_for @hub do |f|
+= simple_form_for [:admin, @hub] do |f|
   = f.error_notification
   .form-inputs
     = f.input :title

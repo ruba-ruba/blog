@@ -1,8 +1,5 @@
 class HubsController < ApplicationController
-  load_and_authorize_resource
-  skip_authorize_resource :only => [:index, :show]
-  before_action :set_hub, only: [:show, :edit, :update, :destroy]
-  layout 'admin', :only => [:edit, :new]
+  before_action :set_hub, only: :show
  
   def index
     @hubs = Hub.published.includes(:posts).published
@@ -53,12 +50,8 @@ class HubsController < ApplicationController
   end
 
   private
-    def set_hub
-      @hub = Hub.published.includes(:posts).find(params[:id])
-      @posts = @hub.posts.published.page(params[:page]).per(6)
-    end
-
-    def hub_params
-      params.require(:hub).permit(:title, :description, :published, :parent_id, :content_type, { :post_ids => [] })
-    end
+  def set_hub
+    @hub = Hub.published.includes(:posts).find(params[:id])
+    @posts = @hub.posts.published.page(params[:page]).per(6)
+  end
 end
