@@ -18,10 +18,12 @@ html lang="en"
         header
           .cutted-wrapper
             = render 'shared/header'
+      .secondary-nav data-magellan-expedition="fixed"
+        .cutted-wrapper
+          = render 'shared/nav'
       .cutted-wrapper
         .container
           .main
-            = render 'shared/nav'
             = yield
         .clearfix
       - if show_best_posts?

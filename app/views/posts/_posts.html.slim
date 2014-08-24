@@ -18,6 +18,6 @@ javascript:
   .clearfix
   ul.pagination
     li.left
-      = link_to_next_page @posts, "Older &raquo;".html_safe
+      = link_to_next_page @posts, "Older &raquo;".html_safe, class: 'button'
     li.right
-      = link_to_previous_page @posts, "&laquo; Newest".html_safe
+      = link_to_previous_page @posts, "&laquo; Newest".html_safe, class: 'button'

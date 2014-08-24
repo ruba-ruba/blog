@@ -1,10 +1,10 @@
 // $prev-next-height: 50px
 // $prev-next-width:  45px
-// @mixin border-radius($r1, $r2, $r3, $r4)
-//   -webkit-border-radius: $r1 $r2 $r3 $r4
-//   -moz-border-radius: $r1 $r2 $r3 $r4
-//   -ms-border-radius: $r1 $r2 $r3 $r4
-//   border-radius: $r1 $r2 $r3 $r4
+@mixin border-radius($r1, $r2, $r3, $r4)
+  -webkit-border-radius: $r1 $r2 $r3 $r4
+  -moz-border-radius: $r1 $r2 $r3 $r4
+  -ms-border-radius: $r1 $r2 $r3 $r4
+  border-radius: $r1 $r2 $r3 $r4
 
 // @mixin base_siblings_div
 //   height: $prev-next-height
@@ -115,7 +115,7 @@
         right: 0
         top: 0
         bottom: 40px
-        background-color: rgba(73,89,87,0.8)
+        background-color: rgba(73,89,87,0.45)
       .title
         color: white
         position: absolute
@@ -276,8 +276,9 @@
         @include transition(0.4s)
       &:hover
         a
+          @include border-radius(0px, 0px, 0px, 0px) 
           @include transition(0.4s)
-          background-color: #07565D !important
+          background-color: #884444 !important
           color: white
 
 
