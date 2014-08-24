@@ -1,21 +1,19 @@
 .nav
   // don't add styles for nav here
   // probably do it in base.sass
-  .buttons
-    display: inline-block
+  ul
     float: left
-    a
-      font-size: 20px
-      margin-right: 5px
-      display: inline-block
-      padding: 8px 8px 0px 8px
-      height: 36px
-      color: white
-      background-color: #07565D
-      &:hover
-        background-color: #884444
-    a.current_tab
-      background-color: #884444
-  .search
-    display: inline-block
-    // float: right
+    li
+      a
+        font-family: 'festus'
+        padding: 10px 20px 0 20px
+        height: 50px
+        background-color: #07565D
+        font-size: 24px
+        margin-bottom: 0px
+        &.current_tab
+          background-color: #884444
+        &:hover
+          background-color: #884444
+    li.search
+      margin-left: 1px

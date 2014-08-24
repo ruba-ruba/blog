@@ -49,7 +49,7 @@ $ ->
 
 
 $(window).load ->
-  if $("#autocomplete_search").val().length > 0
+  if ($("#autocomplete_search").val() && $("#autocomplete_search").val().length > 0)
     $("#autocomplete_search").css
       # 'width': '200px'
       # 'background-color':'white'

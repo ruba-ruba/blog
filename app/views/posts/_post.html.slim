@@ -14,7 +14,7 @@ div class=(dom_id(post))
     span.tags
       = raw post.tags.map(&:name).map { |t| link_to "##{t}", tag_path(t) }.join(', ')
     span.actions
-      = post.impressionist_count(:filter=>:session_hash)
+      = post.views_count
       - unless post_show
         = link_to 'читати далі', post_path(post), class: ''
   - if @post  

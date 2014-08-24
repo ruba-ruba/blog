@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140802124734) do
+ActiveRecord::Schema.define(version: 20140824110745) do
 
   create_table "attachments", force: true do |t|
     t.string   "type"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20140802124734) do
     t.datetime "updated_at"
     t.string   "content_type"
     t.string   "description"
+    t.integer  "views_count",  default: 0
   end
 
   create_table "roles", force: true do |t|

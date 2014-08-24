@@ -14,6 +14,6 @@ table.admin
               = hub.title
       td = link_to post.title, post
       td = post.published
-      td = post.impressionist_count(:filter=>:session_hash)
+      td = post.views_count
       td = link_to 'Edit', [:edit, :admin, post]
       td = link_to 'Destroy', [:admin, post], data: {:confirm => 'Are you sure?'}, :method => :delete

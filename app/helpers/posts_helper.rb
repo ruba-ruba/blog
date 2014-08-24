@@ -4,19 +4,19 @@ module PostsHelper
   end
 
   def best_ever
-    @best_posts = sorted(Post.published.includes(:impressions))
+    @best_posts = sorted(Post.published)
   end
 
   def best_by_year
-    @best_by_year = sorted(Post.last_year.published.includes(:impressions))
+    @best_by_year = sorted(Post.last_year.published)
   end
 
   def best_by_month
-    @best_by_month = sorted(Post.last_month.published.includes(:impressions))
+    @best_by_month = sorted(Post.last_month.published)
   end
 
   def sorted(posts)
-    posts.sort{|x,y| x.impressionist_count(:filter=>:session_hash) <=> y.impressionist_count(:filter=>:session_hash) }.reverse.first(5)
+    posts.sort{|x,y| x.views_count <=> y.views_count}.reverse.first(5)
   end
 
   def type_title(post)
@@ -28,7 +28,7 @@ module PostsHelper
     when 'Photo'
       'see' 
     when 'Code'
-      'study'
+      'Class.new'
     end
   end
 

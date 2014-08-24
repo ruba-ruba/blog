@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   include BlogMethods
-  is_impressionable
+  is_impressionable :counter_cache => true, :column_name => :views_count
   acts_as_taggable_on :tags
 
   POST_TYPES       = %w(Article Travel Photo Code)
@@ -32,7 +32,7 @@ class Post < ActiveRecord::Base
     if search
       where('title LIKE :search OR content LIKE :search',  {:search => "%#{search}%"})
     else
-      scoped
+      self.published.limit(8)
     end
   end
 

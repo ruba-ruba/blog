@@ -2,11 +2,11 @@
   .cutted-wrapper
     .left
       .nav
-        .buttons
-          = link_to 'home', root_path
-          = link_to 'about', '#'
-          = link_to 'archive',  home_archive_path
-          = link_to 'map',  home_map_path
+        ul.button-group
+          li= link_to 'home', root_path, class: 'button'
+          li= link_to 'about', '#', class: 'button'
+          li= link_to 'archive',  home_archive_path, class: 'button'
+          li= link_to 'map',  home_map_path, class: 'button'
     .hexagon.hexagon2
       .hexagon-in1
         .hexagon-in2

@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
-  impressionist :actions=>[:show]
+  impressionist actions: [:show]
   before_action :pass_data, only: [:articles, :travels, :photos]
   
   def index
     if params[:tag]
-      @posts = Post.includes(:hubs, :tags, :impressions).published.tagged_with(params[:tag]).page(params[:page]).per(6)
+      @posts = Post.includes(:hubs, :tags).published.tagged_with(params[:tag]).page(params[:page]).per(6)
     else
-      @posts = Post.includes(:hubs, :tags, :impressions).published.page(params[:page]).per(4)
+      @posts = Post.includes(:hubs, :tags).published.page(params[:page]).per(6)
     end
     render :stream => true
   end
@@ -22,21 +21,21 @@ class PostsController < ApplicationController
 
   def pass_data
     scope = params[:action]
-    @posts = Post.includes(:hubs, :tags, :impressions).send(scope.to_sym).published.page(params[:page]).per(6)
+    @posts = Post.includes(:hubs, :tags).send(scope.to_sym).published.page(params[:page]).per(6)
   end
 
 
   def show
-    @post = Post.includes(:hubs, :tags, :impressions).find(params[:id])
+    @post = Post.includes(:hubs, :tags).find(params[:id])
   end
 
   def search
-    @posts = Post.includes(:hubs, :tags, :impressions).published.search(params[:search]).page(params[:page]).per(6)
+    @posts = Post.includes(:hubs, :tags).published.search(params[:search]).page(params[:page])
     render "posts/index"
   end
 
   def autocomplete
-    posts = Post.includes(:hubs, :tags, :impressions).published.where("title LIKE ?", "%#{params[:term]}%").page(params[:page]).map(&:title)
+    posts = Post.includes(:hubs, :tags).published.where("title LIKE ?", "%#{params[:term]}%").page(params[:page]).map(&:title)
     render :json => posts
   end
 

@@ -9,7 +9,7 @@ div class=(dom_id(post)) class=(cycle("left", "right"))
     .created
       .left
         span.text
-          = "<i class='fi-eye'> #{post.impressionist_count(:filter=>:session_hash)} </i> ".html_safe
+          = "<i class='fi-eye'> #{post.views_count} </i> ".html_safe
         = link_to("count", post_path(post, :anchor => "disqus_thread"))
       .right
         .span.text

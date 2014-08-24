@@ -1,8 +1,7 @@
 .nav data-magellan-expedition="fixed"
-  .buttons
-    = link_to 'Дописи', articles_posts_path, class: "#{current_tab(articles_posts_url)}"
-    = link_to 'Подорожі', travels_posts_path, class: "#{current_tab(travels_posts_url)}"
-    = link_to 'Фотоальбом', '#'
-    = link_to 'Code', "#"
-  .search
-    = render 'shared/search'
+  ul.button-group
+    li= link_to 'Дописи', articles_posts_path, class: "#{current_tab(articles_posts_url)} button"
+    li= link_to 'Подорожі', travels_posts_path, class: "#{current_tab(travels_posts_url)} button"
+    li= link_to 'Фотоальбом', '#', class: "button"
+    li= link_to 'Code', "#", class: "button"
+    li.search= render 'shared/search'
