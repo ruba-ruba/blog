@@ -12,12 +12,16 @@ javascript:
 	(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	}());
 
-.posts 
-  - @posts.each do |post|
-    = render 'posts/post_short', post: post
-  .clearfix
-  ul.pagination
-    li.left
-      = link_to_next_page @posts, "Older &raquo;".html_safe, class: 'button'
-    li.right
-      = link_to_previous_page @posts, "&laquo; Newest".html_safe, class: 'button'
+- if @posts.any?
+  .posts 
+    - @posts.each do |post|
+      = render 'posts/post_short', post: post
+    .clearfix
+    ul.pagination
+      li.left
+        = link_to_next_page @posts, "Older &raquo;".html_safe, class: 'button'
+      li.right
+        = link_to_previous_page @posts, "&laquo; Newest".html_safe, class: 'button'
+- else
+  .posts_empty
+    | Nothing To Do Here

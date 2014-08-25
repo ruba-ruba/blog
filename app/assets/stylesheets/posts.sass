@@ -45,6 +45,13 @@
   transform: scale($scale)
 
 
+.posts_empty
+  margin-top: 10px
+  text-align: center
+  font-family: 'Homestead Display'
+  font-size: 46px
+
+
 // describe show page
 .post-show
   position: relative
@@ -247,7 +254,7 @@
             color: #3E3E29
             i
               font-size: 22px
-      .actions
+      a.read_post_link
         width: 100%
         height: 40px
         padding-top: 5px
@@ -255,15 +262,13 @@
         bottom: 0
         position: absolute
         text-align: center
+        font-family: 'hipster Script Pro'
+        color: silver
+        font-size: 46px
         &:hover
           transition: 0.4s
           background-color: #884444
-        a
-          font-family: 'hipster Script Pro'
-          color: silver
-          font-size: 46px
-          &:hover
-            color: white
+          color: white
   .pagination
     .left, .right
       font-size: 20px
