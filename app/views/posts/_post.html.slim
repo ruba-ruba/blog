@@ -1,26 +1,22 @@
 div class=(dom_id(post))
-  .title
-    = post.title
-    .logo.right
-      = image_tag post.logo
-  .created
-    = created(post)
+  .head
+    .title
+      = post.title
+      .logo.right
+        = image_tag post.logo
+    .created
+      = created(post)
+    .info
+      span.hubs
+        - post.hubs.each do |hub|
+          = link_to hub.title, hub_path(hub)
+      span.tags
+        = raw post.tags.map(&:name).map { |t| link_to "##{t}", tag_path(t) }.join(', ')
   .content 
     = post.content.html_safe
-  .info
-    span.hubs
-      - post.hubs.each do |hub|
-        = link_to hub.title, hub_path(hub)
-    span.tags
-      = raw post.tags.map(&:name).map { |t| link_to "##{t}", tag_path(t) }.join(', ')
-    span.actions
-      = post.views_count
-      - unless post_show
-        = link_to 'читати далі', post_path(post), class: ''
-  - if @post  
-    .siblings
-      - if @post.previous
-        .left= link_to 'previous', post_path(@post.previous)
-      - if @post.next
-        .right= link_to 'next', post_path(@post.next)
+  .siblings
+    - if @post.previous
+      .left= link_to 'previous', post_path(@post.previous)
+    - if @post.next
+      .right= link_to 'next', post_path(@post.next)
   .clearfix
