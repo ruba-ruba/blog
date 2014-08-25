@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def autocomplete
-    posts = Post.includes(:hubs, :tags).published.where("title LIKE ?", "%#{params[:term]}%").page(params[:page]).map(&:title)
+    posts = Post.published.where("title LIKE ?", "%#{params[:term]}%").page(params[:page]).map{|p| p.title[0..18]}
     render :json => posts
   end
 

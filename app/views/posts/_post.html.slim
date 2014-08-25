@@ -16,7 +16,7 @@ div class=(dom_id(post))
     = post.content.html_safe
   .siblings
     - if @post.previous
-      .left= link_to 'previous', post_path(@post.previous)
+      .left= link_to 'previous in category', post_path(@post.previous), class: 'button'
     - if @post.next
-      .right= link_to 'next', post_path(@post.next)
+      .right= link_to 'next in category', post_path(@post.next), class: 'button'
   .clearfix
