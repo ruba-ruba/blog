@@ -27,10 +27,13 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.includes(:hubs, :tags).find(params[:id])
+    if @post.draft? && !current_user && !(current_user && current_user.admin?)
+      raise ActiveRecord::RecordNotFound
+    end
   end
 
   def search
-    @posts = Post.includes(:hubs, :tags).published.search(params[:search]).page(params[:page])
+    @posts = Post.published.includes(:hubs, :tags).search(params[:search]).page(params[:page])
     render "posts/index"
   end
 

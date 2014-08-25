@@ -48,4 +48,8 @@ class Post < ActiveRecord::Base
     attachments.where(target: 'Logo').first.file.url(:logo) if self.attachments.any?
   end
 
+  def draft?
+    !published
+  end
+
 end

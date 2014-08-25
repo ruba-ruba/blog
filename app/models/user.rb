@@ -16,10 +16,15 @@ class User < ActiveRecord::Base
     return !!self.roles.find_by_name(role.to_s.camelize)
   end
 
+  def admin?
+    has_role?('admin')
+  end
+
   private
   
   def default_role
     self.roles << Role.where(:name => 'user').first
   end
+
 
 end
