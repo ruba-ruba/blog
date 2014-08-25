@@ -1,8 +1,8 @@
 div class=(dom_id(post))
-  .logo.right
-    = image_tag post.logo
   .title
-    = link_to post.title, post
+    = post.title
+    .logo.right
+      = image_tag post.logo
   .created
     = created(post)
   .content 

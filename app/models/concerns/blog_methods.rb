@@ -13,7 +13,7 @@ module BlogMethods
   
   module InstanceMethods
     def to_param
-      "#{id}-#{title.gsub(/\s/,'-')}"
+      "#{id}-#{title}".downcase.gsub(/[^a-z0-9]+/i, '-')[0..28]
     end
   end
 

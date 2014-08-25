@@ -31,7 +31,7 @@ gem 'devise'
 gem "cancan"
 gem "rolify"
 gem 'ancestry'
-gem "ckeditor"
+gem 'ckeditor', '~> 4.1.0'
 gem 'paperclip'
 gem 'kaminari'
 gem 'impressionist'

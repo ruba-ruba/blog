@@ -2,7 +2,7 @@ div class=(dom_id(post)) class=(cycle("left", "right"))
   .logo
     = image_tag post.logo
   .title
-    = link_to post.title, post
+    = link_to truncate(post.title, length: 28, separator: ' '), post
   .description
     = post.description
   .info

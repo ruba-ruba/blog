@@ -55,21 +55,19 @@
     width:  100%
     margin: 13px 0px
     .title
-      a
-        color: #3E3E29
-        font-size: 29px
-        letter-spacing: 0px
-        font-weight: bold
-        margin-bottom: 4px
-        &:hover
-          color: #808067
+      color: #3E3E29
+      font-size: 29px
+      letter-spacing: 0px
+      font-weight: bold
+      margin-bottom: 4px
+      .logo
+        padding: 10px 0 0 20px
     .created
       font-size: 16px
       color: grey
       width: 100%
     .content
-      font-family: 'Homestead Display' 
-      font-size: 15px
+      text-align: justify
     .info
       position: relative
       min-height: auto
@@ -99,7 +97,7 @@
     overflow: hidden
     @include transition(0.4s)
     &:hover
-      @include scale(1.1)
+      // @include scale(1.1)
       @include transition(0.4s)
       z-index: 100
       box-shadow: 5px 5px 8px 4px #555444

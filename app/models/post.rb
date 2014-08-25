@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
   has_many :hubs, :through => :categorizations
   has_many :attachments, :as => :attachable
   accepts_nested_attributes_for :attachments
-
+ 
   published('posts')
   default_scope { order('created_at desc') }
   scope :desc, -> {order("posts.created_at DESC")} 

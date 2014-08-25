@@ -310,7 +310,7 @@ DEPENDENCIES
   better_errors
   cancan
   capybara
-  ckeditor
+  ckeditor (~> 4.1.0)
   coderay
   coffee-rails (~> 4.0.0)
   compass-rails
