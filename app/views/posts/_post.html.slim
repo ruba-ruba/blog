@@ -14,6 +14,7 @@ div class=(dom_id(post))
         = raw post.tags.map(&:name).map { |t| link_to "##{t}", tag_path(t) }.join(', ')
   .content 
     = post.content.html_safe
+  .clearfix
   .siblings
     - if @post.previous
       .left= link_to 'previous in category', post_path(@post.previous), class: 'button'
