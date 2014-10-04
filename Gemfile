@@ -45,14 +45,13 @@ gem 'mousetrap-rails'
 gem 'coderay'
 
 
-
-# #debug
+#debug
 gem 'better_errors'
 gem 'pry'
 gem 'pry-rails'
 gem 'pry-stack_explorer'
 
-# #test
+#test
 gem 'rspec-rails'
 gem 'simplecov', :require => false
 gem 'simplecov-rcov', :require => false
@@ -71,6 +70,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'meta_table', path: '/home/ruba/rails/meta_table/'#:git => "https://github.com/ruba-ruba/meta_table"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

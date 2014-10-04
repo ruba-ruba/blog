@@ -1,3 +1,8 @@
+PATH
+  remote: /home/ruba/rails/meta_table
+  specs:
+    meta_table (0.0.1.alpha)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -333,6 +338,7 @@ DEPENDENCIES
   jquery-ui-rails (~> 5.0.0)
   kaminari
   launchy
+  meta_table!
   mousetrap-rails
   mysql2
   paperclip

@@ -1,7 +1,11 @@
 class Admin::PostsController < Admin::AdminController
   load_and_authorize_resource class: Admin::PostsController
   inherit_resources
-  actions :all, :except => :show
+  actions :all, :except => [:show, :index]
+
+  def index
+    @table = Post.meta_table(attributes: [:title, :published, :content, :views_count, :content_type, :tag_list, :type])
+  end
 
   private
 
