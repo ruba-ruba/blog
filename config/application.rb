@@ -13,6 +13,7 @@ Bundler.require(:default, Rails.env)
 
 module Blog
   class Application < Rails::Application
+    APP_URL = 'localhost:3000'
 
     # CKEditor 
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
