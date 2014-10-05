@@ -6,7 +6,7 @@ class Admin::PostsController < Admin::AdminController
   def index
     @table = Post.meta_table(attributes: [:title, {key: :published, label: 'Shown?'}, :content,                                    :views_count, :content_type, :tag_list, :type, {key: :user,                                    method: :email}], 
                             relations: [{:hubs => [:title, :published]}, {:user => [:email]} ], 
-                            actions: [:show, [:edit, :admin]])
+                            actions: [:show, [:edit, :admin], [:destroy, :admin]])
   end
 
   private

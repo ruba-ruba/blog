@@ -19,6 +19,7 @@
  *= require fonts
  *= require navigation
  *= require header
+ *= require meta_table
  */
 
 
@@ -27,6 +28,4 @@ html{
   margin:  0;
   overflow-y: scroll;
 }
-
-
 
