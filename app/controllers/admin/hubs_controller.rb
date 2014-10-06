@@ -5,7 +5,7 @@ class Admin::HubsController < Admin::AdminController
   actions :all, :except => [:show, :index]
 
   def index
-    @table = Hub.meta_table(attributes:[:title, :description, :published, :parent_id, :content_type], actions: [:show, [:edit, :admin], [:destroy, :admin]])
+    @table = render_meta_table(Hub, attributes:[:title, :description, :published, :parent_id, :content_type], actions: [:show, [:edit, :admin], [:destroy, :admin]])
   end
 
   private
