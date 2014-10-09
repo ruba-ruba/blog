@@ -5,6 +5,11 @@ class Post < ActiveRecord::Base
 
   POST_TYPES       = %w(Article Travel Photo Code)
   ATTACHMENT_TYPES = %w(Logo)
+  
+  POST_TABLE_OPTS  = {attributes: [{key: :id, label: 'Number', sortable: true}, {key: :logo, label: 'Preview', render_text: "<%= image_tag(value.logo, style:'height: 100px;width:100px;') %>"}, {key: :title, sortable: true}, {key: :published, label: 'Shown?'}, {key: :content, render_text: "<%= link_to 'just do it', post_path(record) %>"}, :views_count, {key: :content_type, render_text: "record.content_type"}, :tag_list, {key: :user, method: :email, label: "Created By Email"}],
+                      actions: [:show, [:edit, :admin], [:destroy, :admin], "<%= link_to record.title, post_path(record) %>"],
+                     table_options: {:scope => nil, per_page: 4}
+                      }
 
   belongs_to :user
   has_many :categorizations
@@ -13,7 +18,7 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :attachments
  
   published('posts')
-  default_scope { order('created_at desc') }
+  # default_scope { order('created_at desc') }
   scope :desc, -> {order("posts.created_at DESC")} 
   scope :articles,  -> { where(content_type: 'Article') }
   scope :travels,  -> { where(content_type: 'Travel') }

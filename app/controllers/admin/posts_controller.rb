@@ -4,11 +4,10 @@ class Admin::PostsController < Admin::AdminController
   actions :all, :except => [:show, :index]
 
   def index
-    @table = render_meta_table(Post, attributes: [{key: :id, label: 'Number'}, :title, {key: :published, label: 'Shown?'}, :content, :views_count, :content_type, :tag_list, {key: :user, method: :email, label: "Created By Email"}], 
-                            relations: [{:hubs => [:title, :published]}, {:user => [:email]} ], 
-                            actions: [:show, [:edit, :admin], [:destroy, :admin]],
-                            table_options: {:scope => nil})
+    @table = render_meta_table(Post::POST_TABLE_OPTS)
+    # binding.pry
   end
+
 
   private
 
