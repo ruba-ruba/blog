@@ -10,8 +10,8 @@ div class=(dom_id(post))
       span.hubs
         - post.hubs.each do |hub|
           = link_to hub.title, hub_path(hub)
-      span.tags
-        = raw post.tags.map(&:name).map { |t| link_to "##{t}", tag_path(t) }.join(', ')
+      / span.tags
+        # = raw post.tags.map(&:name).map { |t| link_to "##{t}", tag_path(t) }.join(', ')
   .content 
     = post.content.html_safe
   .clearfix

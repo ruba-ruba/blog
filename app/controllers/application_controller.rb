@@ -67,4 +67,10 @@ class ApplicationController < ActionController::Base
   def current_tab(path)
     "current_tab" if request.url == path
   end
+
+  private 
+  def local_request?
+    false
+  end
+
 end

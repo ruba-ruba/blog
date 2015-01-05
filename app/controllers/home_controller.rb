@@ -3,9 +3,9 @@ class HomeController < ApplicationController
 
   def index
     if params[:tag]
-      @posts = Post.includes(:hubs, :tags).published.tagged_with(params[:tag]).page(params[:page]).per(6)
+      @posts = Post.includes(:hubs).published.tagged_with(params[:tag]).page(params[:page]).per(6)
     else
-      @posts = Post.includes(:hubs, :tags).published.page(params[:page]).per(6)
+      @posts = Post.includes(:hubs).published.page(params[:page]).per(6)
     end
     render :stream => true
   end
@@ -15,7 +15,7 @@ class HomeController < ApplicationController
   end
 
   def archive
-    @posts =  Post.published.includes(:tags, :hubs).group_by { |t| t.created_at.beginning_of_year }
+    @posts =  Post.published.includes(:hubs).group_by { |t| t.created_at.beginning_of_year }
   end
 
 end

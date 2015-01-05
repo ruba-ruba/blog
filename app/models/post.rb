@@ -1,23 +1,22 @@
 class Post < ActiveRecord::Base
   include BlogMethods
   is_impressionable :counter_cache => true, :column_name => :views_count
-  acts_as_taggable_on :tags
+  # acts_as_taggable_on :post_tags
 
   POST_TYPES       = %w(Article Travel Photo Code)
   ATTACHMENT_TYPES = %w(Logo)
   
   POST_TABLE_OPTS  = 
         { attributes: [{key: :id, label: 'Number', sortable: true},
-                      {key: :logo, label: 'Preview', render_text: "<%= image_tag(value.logo, style:'height: 100px;width:100px;') %>"}, 
+                      {key: :logo, label: 'Preview', render_text: "<%= image_tag(record.logo, style:'height: 100px;width:100px;') %>"}, 
                       {key: :title, sortable: true}, 
                       {key: :published, label: 'Shown?'}, 
                       {key: :content, render_text: "<%= link_to 'just do it', post_path(record) %>"}, 
                       {key: :content_type, render_text: "record.content_type"}, 
-                      :views_count, 
-                      :tag_list, 
+                      :views_count,
                       {key: :user, method: :email, label: "Created By Email"}],
           actions: [:show, [:edit, :admin], [:destroy, :admin], "<%= link_to record.title, post_path(record) %>"],
-          table_options: {:scope => 'desc.articles', per_page: 4}
+          table_options: {:scope => 'desc', per_page: 4}
         }
 
   belongs_to :user
