@@ -16,7 +16,11 @@ class Admin::PostsController < Admin::AdminController
                     {:scope => 'published', per_page_choises: [5, 10, 15], includes: [:hubs, :user]})
 
   def index
-    @table = render_posts_table
+    @table = render_posts_table(Post::POST_TABLE_OPTS)
+  end
+
+  def create
+    create! [:admin, :posts]
   end
 
   private

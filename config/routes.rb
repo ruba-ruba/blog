@@ -14,6 +14,8 @@ Blog::Application.routes.draw do
 
   root 'home#index'
 
+  resources :hubs, only: [:index, :show], :path => "categories"
+
   resources :posts, only: [:index, :show] do
     collection do
       get 'search' => 'posts#search'
@@ -22,7 +24,6 @@ Blog::Application.routes.draw do
     end
   end
 
-  resources :hubs, only: [:index, :show], :path => "categories"
   match '/autocomplete', to: 'posts#autocomplete', via: [:get, :post]
 
   get '/home/map' => 'home#map'

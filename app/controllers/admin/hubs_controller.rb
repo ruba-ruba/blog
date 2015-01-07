@@ -11,7 +11,9 @@ class Admin::HubsController < Admin::AdminController
                     {:scope => '', per_page: 4}
 
   def index
-    @table = render_hubs_table
+    @table = render_hubs_table(attributes:[:title, :description, :published, :parent_id, :content_type], 
+                               actions:   [:show, [:edit, :admin], [:destroy, :admin],
+                               table_options: {:scope => 'desc.articles', per_page: 4}])
   end
 
   private
