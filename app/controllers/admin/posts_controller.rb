@@ -5,7 +5,10 @@ class Admin::PostsController < Admin::AdminController
 
   def index
     @table = render_meta_table(Post::POST_TABLE_OPTS)
-    # binding.pry
+  end
+
+  def create
+    create! [:admin, :posts]
   end
 
 

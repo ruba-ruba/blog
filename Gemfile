@@ -71,7 +71,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'meta_table', path: '/home/ruba/rails/meta_table/'#:git => "https://github.com/ruba-ruba/meta_table"
+# gem 'meta_table', path: '/home/ruba/rails/meta_table/'
+gem 'meta_table', :git => "https://github.com/ruba-ruba/meta_table"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

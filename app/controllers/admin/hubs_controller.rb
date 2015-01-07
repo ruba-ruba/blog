@@ -5,7 +5,9 @@ class Admin::HubsController < Admin::AdminController
   actions :all, :except => [:show, :index]
 
   def index
-    @table = render_meta_table(Hub, attributes:[:title, :description, :published, :parent_id, :content_type], actions: [:show, [:edit, :admin], [:destroy, :admin], table_options: {:scope => 'desc.articles', per_page: 4}])
+    @table = render_meta_table(attributes:[:title, :description, :published, :parent_id, :content_type], 
+                               actions:   [:show, [:edit, :admin], [:destroy, :admin], 
+                               table_options: {:scope => 'desc.articles', per_page: 4}])
   end
 
   private
