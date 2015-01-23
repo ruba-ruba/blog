@@ -5,8 +5,8 @@ html lang="en"
     meta content="width=(device-width,)initial-scale=1.0" name="viewport"
     = favicon_link_tag 'favicon.ico'
     title = page_title
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
     link href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css" rel="stylesheet" type="text/css" /
@@ -37,7 +37,7 @@ html lang="en"
         .cutted-wrapper
           = render 'shared/nav'
         .clearfix
-      .cutted-wrapper
+      .cutted-wrapper 
         .container
           .main
             = yield
@@ -57,3 +57,10 @@ html lang="en"
     .footer
       .cutted-wrapper
         = render 'shared/footer'
+
+    script type="text/x-handlebars"
+      div.cutted-wrapper
+        | {{ outlet }}
+        | {{link-to 'About' 'about'}}
+        | {{link-to 'Posts' 'posts'}}
+        | {{link-to 'Home' 'application'}}

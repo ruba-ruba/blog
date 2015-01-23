@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   layout 'info', :only => [:map, :archive]
 
+  respond_to :json
+
   def index
     @posts = Post.published.includes(:hubs, :attachments)
     if params[:tag]

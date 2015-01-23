@@ -30,6 +30,8 @@ Blog::Application.configure do
 
   config.assets.raise_runtime_errors = true
 
+  config.ember.variant = :development
+
   config.after_initialize do
     Bullet.enable = true
     Bullet.alert = true

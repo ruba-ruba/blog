@@ -7,7 +7,8 @@ class Post < ActiveRecord::Base
   ATTACHMENT_TYPES = %w(Logo)
 
   POST_TABLE_OPTS  = 
-        { attributes: [{key: :id, label: 'Number', sortable: true},
+        { key: :posts,
+          attributes: [{key: :id, label: 'Number', sortable: true},
                       {key: :logo, label: 'Preview', render_text: "<%= image_tag(record.logo, style:'height: 100px;width:100px;') %>"}, 
                       {key: :title, sortable: true, searchable: true}, 
                       {key: :published, label: 'Shown?'}, 

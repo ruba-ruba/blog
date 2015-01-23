@@ -81,11 +81,6 @@ end
 gem 'meta_table', path: '/home/ruba/rails/meta_table/'
 # gem 'meta_table', :git => "https://github.com/ruba-ruba/meta_table"
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+# investigate 
+gem 'ember-rails'
+gem 'ember-source', '~> 1.9.0'

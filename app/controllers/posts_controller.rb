@@ -10,6 +10,8 @@ class PostsController < ApplicationController
       else
         @posts.page(params[:page]).per(6)
       end
+    render json: @posts
+    # render stream: true
   end
 
   def articles

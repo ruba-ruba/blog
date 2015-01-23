@@ -12,17 +12,27 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require mousetrap
 //= require jquery-ui
 //= require jquery.cookie
-//= require turbolinks
 //= require foundation
+//= #require turbolinks
+//= #require mousetrap
 //= #require ckeditor/override
 //= require ckeditor/init
-
-// files
+//= require main
 //= require main.js.coffee
 //= require meta_table
+
+// EMBER BLOCK
+
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require blog
+
+// EMBER BLOCK
+// for more details see: http://emberjs.com/guides/application/
 
 $(function(){ $(document).foundation(); });
 
@@ -33,4 +43,15 @@ $(document).ready(function(){
     var amountMovedY = (e.pageY * -1 / 6);
     $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
   });
+});
+});
+
+
+// init ember 
+this.Blog = Ember.Application.create({
+  LOG_TRANSITIONS: true,
+  VERSION: '1.0.0',
+  ready: function () {
+    console.log('App version: ' + Blog.VERSION + ' is ready.');
+  }
 });
