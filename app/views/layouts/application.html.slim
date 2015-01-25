@@ -25,42 +25,35 @@ html lang="en"
         });
       });
   body
-    .background
-    .wrapper
-      = render 'shared/flash'
-      = render 'shared/top_header'
-      - if show_header?
-        header
-          .cutted-wrapper
-            = render 'shared/header'
-      .secondary-nav data-magellan-expedition="fixed"
-        .cutted-wrapper
-          = render 'shared/nav'
-        .clearfix
-      .cutted-wrapper 
-        .container
-          .main
-            = yield
-        .clearfix
-      - if show_best_posts?
-        .best-posts
-          .cutted-wrapper
-            = render 'posts/best'
-        .clearfix
-      - if show_categories?
-        .categories
-          .cutted-wrapper
-            | Категорії:
-            = render 'shared/categories', :hubs => @categories
-        .clearfix
-      .main_footer
-    .footer
-      .cutted-wrapper
-        = render 'shared/footer'
-
-    script type="text/x-handlebars"
-      div.cutted-wrapper
-        | {{ outlet }}
-        | {{link-to 'About' 'about'}}
-        | {{link-to 'Posts' 'posts'}}
-        | {{link-to 'Home' 'application'}}
+    / .background
+    / .wrapper
+    /   = render 'shared/flash'
+    /   = render 'shared/top_header'
+    /   - if show_header?
+    /     header
+    /       .cutted-wrapper
+    /         = render 'shared/header'
+    /   .secondary-nav data-magellan-expedition="fixed"
+    /     .cutted-wrapper
+    /       = render 'shared/nav'
+    /     .clearfix
+    /   .cutted-wrapper 
+    /     .container
+    /       .main
+    /         = yield
+    /     .clearfix
+    /   - if show_best_posts?
+    /     .best-posts
+    /       .cutted-wrapper
+    /         = render 'posts/best'
+    /     .clearfix
+    /   - if show_categories?
+    /     .categories
+    /       .cutted-wrapper
+    /         | Категорії:
+    /         = render 'shared/categories', :hubs => @categories
+    /     .clearfix
+    /   .main_footer
+    / .footer
+    /   .cutted-wrapper
+    /     = render 'shared/footer'

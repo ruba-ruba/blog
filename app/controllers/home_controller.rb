@@ -6,7 +6,9 @@ class HomeController < ApplicationController
   def index
     @posts = Post.published.includes(:hubs, :attachments)
     if params[:tag]
-      @posts = @posts.tagged_with(params[:tag]).page(params[:page]).per(6)
+      @posts = scope.tagged_with(params[:tag])
+    else
+      @posts = scope
     end
     @posts = @posts.page(params[:page]).per(6)
   end
