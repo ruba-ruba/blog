@@ -44,10 +44,9 @@ $(document).ready(function(){
     $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
   });
 });
-});
 
 
-// init ember 
+// init ember
 this.Blog = Ember.Application.create({
   LOG_TRANSITIONS: true,
   VERSION: '1.0.0',

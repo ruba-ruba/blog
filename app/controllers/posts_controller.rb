@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   def pass_data
     scope = params[:action]
     @posts = Post.includes(:hubs, :attachments).published.send(scope.to_sym).page(params[:page]).per(6)
+    render json: @posts
   end
 
   def show
@@ -32,6 +33,7 @@ class PostsController < ApplicationController
     if @post.draft? && !(current_user && current_user.admin?)
       raise ActiveRecord::RecordNotFound
     end
+    render json: @post
   end
 
   def search
