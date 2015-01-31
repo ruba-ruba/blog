@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125094811) do
+ActiveRecord::Schema.define(version: 20150131165023) do
 
   create_table "attachments", force: true do |t|
     t.string   "type"
@@ -100,8 +100,9 @@ ActiveRecord::Schema.define(version: 20150125094811) do
   create_table "meta_table_views", force: true do |t|
     t.string   "name"
     t.string   "source_class"
-    t.boolean  "hidden",        default: false
-    t.boolean  "editable",      default: true
+    t.string   "source_controller"
+    t.boolean  "hidden",            default: false
+    t.boolean  "editable",          default: true
     t.integer  "position"
     t.text     "table_columns"
     t.string   "conditions"

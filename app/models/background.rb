@@ -7,6 +7,8 @@ class Background < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
+  scope :ordered, -> {order("backgrounds.id DESC")} 
+
   def self.image_size(image)
     case image.instance.target
     when 'HeaderBackground'

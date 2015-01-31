@@ -4,10 +4,14 @@ class Admin::HubsController < Admin::AdminController
   inherit_resources
   actions :all, :except => [:show, :index]
 
+  meta_table :hubs, [
+                     :title, :description, :published, :parent_id, :content_type, 
+                     {key: :actions, render_text: [:show, [:edit, :admin], [:destroy, :admin]]}
+                    ],  
+                    {:scope => '', per_page: 4}
+
   def index
-    @table = render_meta_table(attributes:[:title, :description, :published, :parent_id, :content_type], 
-                               actions:   [:show, [:edit, :admin], [:destroy, :admin], 
-                               table_options: {:scope => 'desc.articles', per_page: 4}])
+    @table = render_hubs_table
   end
 
   private
