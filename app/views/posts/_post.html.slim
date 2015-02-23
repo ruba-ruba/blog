@@ -2,17 +2,17 @@ div class=(dom_id(post))
   .head
     .title
       = post.title
-      .logo.right
-        = image_tag post.logo
-    .created
-      = created(post)
-    .info
-      span.hubs
+    .short_info.left
+      .info
+        | Categories: 
         - post.hubs.each do |hub|
           = link_to hub.title, hub_path(hub)
-      / span.tags
-        # = raw post.tags.map(&:name).map { |t| link_to "##{t}", tag_path(t) }.join(', ')
-  .content 
+      .created.right
+        = created(post)
+    .clearfix
+    .logo.right
+      = image_tag post.logo
+  .content
     = post.content.html_safe
   .clearfix
   .siblings

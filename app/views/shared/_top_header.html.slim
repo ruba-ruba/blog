@@ -7,6 +7,7 @@
           li= link_to 'about', '#', class: "#{current_tab(nil)} button"
           li= link_to 'archive',  home_archive_path, class: "#{current_tab(home_archive_url)} button"
           li= link_to 'map',  home_map_path, class: "#{current_tab(home_map_url)} button"
+          li= link_to 'admin', admin_path, class: "#{current_tab(home_map_url)} button" if current_user && current_user.admin?
     .hexagon.hexagon2
       .hexagon-in1
         .hexagon-in2

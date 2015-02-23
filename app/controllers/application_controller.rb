@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
 
   include ActionView::Helpers::DateHelper
   include ApplicationHelper
-  
+
   before_filter :category_menu, :recent_posts, :best_ever, :best_by_month, :best_by_year
-  
+
   helper_method :current_hub, :current_tab
   helper_method :show_header?, :show_categories?, :show_best_posts?
   helper_method :allow_slider

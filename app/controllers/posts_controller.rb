@@ -24,10 +24,9 @@ class PostsController < ApplicationController
     @posts = Post.includes(:hubs).send(scope.to_sym).published.page(params[:page]).per(6)
   end
 
-
   def show
     @post = Post.includes(:hubs).find(params[:id])
-    if @post.draft? && !current_user && !(current_user && current_user.admin?)
+    if @post.draft? && !(current_user && current_user.admin?)
       raise ActiveRecord::RecordNotFound
     end
   end
@@ -38,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def autocomplete
-    posts = Post.published.where("title LIKE ?", "%#{params[:term]}%").page(params[:page]).map{|p| p.title[0..18]}
+    posts = Post.published.search(params[:term]).page(params[:page]).map{|p| p.title[0..18]}
     render :json => posts
   end
 
