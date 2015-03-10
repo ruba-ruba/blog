@@ -34,6 +34,7 @@ gem 'ancestry'
 gem 'ckeditor', '~> 4.1.0'
 gem 'paperclip'
 gem 'kaminari'
+# gem 'will_paginate'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 
@@ -71,8 +72,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# gem 'meta_table', path: '/home/ruba/rails/meta_table/'
-gem 'meta_table', :git => "https://github.com/ruba-ruba/meta_table"
+gem 'meta_table', path: '/home/ruba/rails/meta_table/'
+# gem 'meta_table', :git => "https://github.com/ruba-ruba/meta_table"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

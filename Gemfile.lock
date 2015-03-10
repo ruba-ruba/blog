@@ -1,9 +1,10 @@
-GIT
-  remote: https://github.com/ruba-ruba/meta_table
-  revision: 2b956a1ede7a575f8cb294a59d089490dd73bb60
+PATH
+  remote: /home/ruba/rails/meta_table
   specs:
     meta_table (0.0.2.alpha)
       kaminari (~> 0.16.1)
+      rspec (~> 3.1.0)
+      will_paginate (~> 3.0.7)
 
 GEM
   remote: https://rubygems.org/
@@ -301,6 +302,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    will_paginate (3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 

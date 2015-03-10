@@ -4,10 +4,10 @@ class Admin::HubsController < Admin::AdminController
   inherit_resources
   actions :all, :except => [:show, :index]
 
-  meta_table :hubs, [
+  meta_table :hub, [
                      :title, :description, :published, :parent_id, :content_type, 
                      {key: :actions, render_text: [:show, [:edit, :admin], [:destroy, :admin]]}
-                    ],  
+                    ],
                     {:scope => '', per_page: 4}
 
   def index

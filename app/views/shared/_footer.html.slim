@@ -1,5 +1,5 @@
 .footer-content
-  = debug params
-  br
   = link_to 'архів записів', home_archive_path
   = link_to 'карта сайту', home_map_path
+  .author
+    = owner_text_helper(start_from: 2015)
