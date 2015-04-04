@@ -1,7 +1,5 @@
 div class=(dom_id(post))
   .head
-    .title
-      = post.title
     .short_info.left
       .info
         | Categories: 
@@ -10,14 +8,18 @@ div class=(dom_id(post))
       .created.right
         = created(post)
     .clearfix
+    .title
+      = post.title
+    .clearfix
     .logo.right
       = image_tag post.logo
   .content
     = post.content.html_safe
   .clearfix
+  br
   .siblings
     - if @post.previous
-      .left= link_to 'previous in category', post_path(@post.previous), class: 'button'
+      .left= link_to 'previous', post_path(@post.previous), class: 'custom-button prev'
     - if @post.next
-      .right= link_to 'next in category', post_path(@post.next), class: 'button'
+      .right= link_to 'next', post_path(@post.next), class: 'custom-button next'
   .clearfix
