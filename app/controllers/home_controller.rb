@@ -2,12 +2,11 @@ class HomeController < ApplicationController
   layout 'info', :only => [:map, :archive]
 
   def index
+    @posts = Post.published.includes(:hubs)
     if params[:tag]
-      @posts = Post.includes(:hubs).published.tagged_with(params[:tag]).page(params[:page]).per(6)
-    else
-      @posts = Post.includes(:hubs).published.page(params[:page]).per(6)
+      @posts = @posts.tagged_with(params[:tag])
     end
-    render :stream => true
+    @posts = @posts.page(params[:page]).per(6)
   end
 
   def map
@@ -15,7 +14,7 @@ class HomeController < ApplicationController
   end
 
   def archive
-    @posts =  Post.published.includes(:hubs).group_by { |t| t.created_at.beginning_of_year }
+    @posts = Post.published.includes(:hubs).group_by { |t| t.created_at.beginning_of_year }
   end
 
 end

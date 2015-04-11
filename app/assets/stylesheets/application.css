@@ -30,3 +30,7 @@ html{
   overflow-y: scroll;
 }
 
+.button-group > li {
+  margin: 0px !important;
+}
+

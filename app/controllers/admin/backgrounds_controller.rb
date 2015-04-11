@@ -1,7 +1,7 @@
 class Admin::BackgroundsController < Admin::AdminController
   # load_and_authorize_resource class: Admin::BackgroundsController
   inherit_resources
-  actions :index, :new, :create
+  actions :index, :new, :create, :destroy
 
   private
   def background_params

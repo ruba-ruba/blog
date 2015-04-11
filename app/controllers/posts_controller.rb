@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.published.includes(:hubs).search(params[:search]).page(params[:page])
+    @posts = Post.published.includes(:hubs).search(params[:search]).page(params[:page]).per(6)
     render "posts/index"
   end
 

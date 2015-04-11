@@ -9,6 +9,21 @@ html lang="en"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
+    link href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css" rel="stylesheet" type="text/css" /
+    link href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css" rel="stylesheet" type="text/css" /
+    script src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js" type="text/javascript"
+    javascript:
+      $(document).ready(function(){
+        $('.carousel').slick({
+          dots: false,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          arrows: true
+        });
+      });
   body
     .background
     .wrapper
