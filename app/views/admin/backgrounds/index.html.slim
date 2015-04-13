@@ -1,11 +1,13 @@
 table.admin
   tr
+    td Preview
     td File Name
     td Target
     td Active
     td Deactivate
   - @backgrounds.each do |background|
     tr
+      td= image_tag background.image(:preview)
       td= background.image_file_name
       td= background.target
       td= background.active

@@ -2,16 +2,17 @@
   .admin_pannel
     = link_to 'main', root_path, class: "button small"
     = link_to 'Posts', '#', class: 'button small dropdown', 'data-dropdown' => "posts-drop"
-    .ul id="posts-drop" data-dropdown-content='' class="f-dropdown" 
+    ul id="posts-drop" data-dropdown-content='' class="f-dropdown" 
       li= link_to 'Posts', admin_posts_path
       li= link_to 'Add Post', new_admin_post_path
     = link_to 'Hubs', '#', class: 'button small dropdown', 'data-dropdown' => "hubs-drop"
-    .ul id="hubs-drop" data-dropdown-content='' class="f-dropdown"
+    ul id="hubs-drop" data-dropdown-content='' class="f-dropdown"
       li= link_to 'Hubs', admin_hubs_path
       li= link_to 'Add Hub', new_admin_hub_path
     = link_to 'Backgrounds', '#', class: 'button small dropdown', 'data-dropdown' => "backgrounds-drop"
-    .ul id="backgrounds-drop" data-dropdown-content='' class="f-dropdown"
+    ul id="backgrounds-drop" data-dropdown-content='' class="f-dropdown"
       li= link_to 'Backgrounds', admin_backgrounds_path
       li= link_to 'Add Backgrounds', new_admin_background_path
     = link_to 'Edit profile', edit_user_registration_path,  class: "button small"
     = link_to 'Logout', destroy_user_session_path, :method => :delete, class: "button small"
+  .clearfix
