@@ -44,6 +44,8 @@ module Blog
 
     config.quiet_assets = true
 
+    config.i18n.default_locale = :ua
+
     #let cofig devise
     config.to_prepare do
       Devise::SessionsController.layout "devise"

@@ -1,5 +1,5 @@
 Blog::Application.routes.draw do
-  
+
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users, :controllers => { :registrations => "registrations" }
@@ -14,7 +14,6 @@ Blog::Application.routes.draw do
 
   root 'home#index'
 
-  resources :hubs, only: [:index, :show], :path => "categories"
   resources :posts, only: [:index, :show] do
     collection do
       get 'search' => 'posts#search'
@@ -22,6 +21,8 @@ Blog::Application.routes.draw do
       get 'travels' => 'posts#travels'
     end
   end
+
+  resources :hubs, only: [:index, :show], :path => "categories"
   match '/autocomplete', to: 'posts#autocomplete', via: [:get, :post]
 
   get '/home/map' => 'home#map'

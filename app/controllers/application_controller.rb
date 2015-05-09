@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
 
   before_filter :category_menu, :recent_posts, :best_ever, :best_by_month, :best_by_year
+  before_filter :set_locale
 
   helper_method :current_hub, :current_tab
   helper_method :show_header?, :show_categories?, :show_best_posts?
@@ -26,15 +27,21 @@ class ApplicationController < ActionController::Base
   end
 
   def page_title
-    base = 'Mykhailo Rybak Blog'
-    case
-    when @post && @post.title.present?
-      "#{@post.title} | #{base}"
-    when @hub && @hub.title.present?
-      "#{@hub.title} | #{base}"
+    if @post && @post.title.present?
+      "#{@post.title} | #{base_title}"
+    elsif @hub && @hub.title.present?
+      "#{@hub.title}  | #{base_title}"
     else
-      base
+      base_title
     end
+  end
+
+  def base_title
+    I18n.t('.base_title')
+  end
+
+  def default_url_options(options={})
+    { :locale => I18n.locale == I18n.default_locale ? nil : I18n.locale  }
   end
 
 
@@ -57,9 +64,9 @@ class ApplicationController < ActionController::Base
   end
 
   def created object
-    "#{time_ago_in_words(object.created_at)} ago" 
+    "#{time_ago_in_words(object.created_at)} #{I18n.t('.ago')}"
   end
-  
+
   def current_hub(path)
     "current_hub" if request.url.include?(path) || @post && @post.hubs.include?(Hub.find(path.split('/')[2]))
   end
@@ -68,9 +75,16 @@ class ApplicationController < ActionController::Base
     "current_tab" if request.url == path
   end
 
-  private 
   def local_request?
     false
   end
 
+  private
+
+  def set_locale
+    if %w(en ua).include?(params[:locale])
+      cookies[:locale] = params[:locale]
+    end
+    I18n.locale = params[:locale] || cookies[:locale] || I18n.default_locale
+  end
 end

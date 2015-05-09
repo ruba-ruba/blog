@@ -1,5 +1,15 @@
 .footer-content
   = link_to 'архів записів', home_archive_path
   = link_to 'карта сайту', home_map_path
+  div
+    - if I18n.locale == I18n.default_locale
+      = link_to "English",  params.merge(locale: "en"), onclick: "window.location.reload()", remote: true
+    - else
+      = link_to "Українська", params.merge(locale: "ua"), onclick: "window.location.reload()", remote: true
+  div
+    - if current_user
+      = link_to 'sign out', destroy_user_session
+    - else
+      = link_to 'sign in', new_user_session_path
   .author
     = owner_text_helper(start_from: 2015)
