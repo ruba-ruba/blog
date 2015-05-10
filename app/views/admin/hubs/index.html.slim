@@ -1,18 +1,1 @@
-table.admin
-  tr
-    td hub
-    td posts
-    td publised
-    td
-    td
-  - @hubs.each do |hub|
-    tr data={publised: hub.published.to_s}
-      td = link_to hub.title, hub
-      td
-        ul
-          - hub.posts.each do |post|
-            li
-              = post.title
-      td = hub.published
-      td = link_to 'Edit', [:edit, :admin, hub]
-      td = link_to 'Destroy', [:admin, hub], data: {:confirm => 'Are you sure?'}, :method => :delete
+= @table

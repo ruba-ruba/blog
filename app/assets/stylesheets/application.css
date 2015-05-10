@@ -19,6 +19,8 @@
  *= require fonts
  *= require navigation
  *= require header
+ *= require meta_table
+ *= require custom_buttons
  */
 
 
@@ -28,5 +30,7 @@ html{
   overflow-y: scroll;
 }
 
-
+.button-group > li {
+  margin: 0px !important;
+}
 

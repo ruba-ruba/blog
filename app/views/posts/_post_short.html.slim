@@ -20,11 +20,11 @@ div class=(dom_id(post)) class=(cycle("left", "right"))
       - post.hubs.each do |hub|
         .hub
           = link_to "<i class='fi-pencil'></i> #{hub.title}".html_safe, hub_path(hub)
-    .tags
-      .tag
-        = "#{'Tag'.pluralize(post.tags.map(&:name).size)}:"
-      - post.tags.map(&:name).map do |t|
-        .tag
-          = link_to "<i class='fi-pricetag-multiple'></i> #{t}".html_safe, tag_path(t)
+    / .tags
+      / .tag
+        / = "#{'Tag'.pluralize(post.tags.map(&:name).size)}:"
+      / - post.tags.map(&:name).map do |t|
+        / .tag
+          / = link_to "<i class='fi-pricetag-multiple'></i> #{t}".html_safe, tag_path(t)
     = link_to type_title(post), post_path(post), class: 'read_post_link'
   .clearfix

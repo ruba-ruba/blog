@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   include BlogMethods
   is_impressionable :counter_cache => true, :column_name => :views_count
-  acts_as_taggable_on :tags
+  acts_as_taggable_on :skills
 
   POST_TYPES       = %w(Article Travel Photo Code)
   ATTACHMENT_TYPES = %w(Logo)
@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :attachments
  
   published('posts')
-  default_scope { order('created_at desc') }
+  # default_scope { order('created_at desc') }
   scope :desc, -> {order("posts.created_at DESC")} 
   scope :articles,  -> { where(content_type: 'Article') }
   scope :travels,  -> { where(content_type: 'Travel') }

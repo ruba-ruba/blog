@@ -42,6 +42,10 @@ module Blog
     config.assets.initialize_on_precompile=false
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
+    config.quiet_assets = true
+
+    config.i18n.default_locale = :ua
+
     #let cofig devise
     config.to_prepare do
       Devise::SessionsController.layout "devise"

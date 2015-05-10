@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.4'
-gem 'pg'
+gem 'rails', '4.1.6'
+gem 'rails-i18n'
+# gem 'pg'
 gem 'mysql2'
 
 #defaults
@@ -11,6 +12,7 @@ gem 'fancybox2-rails', '~> 0.2.8'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '4.0.3'
+gem 'quiet_assets', group: :development
 gem 'compass-rails'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
@@ -34,6 +36,7 @@ gem 'ancestry'
 gem 'ckeditor', '~> 4.1.0'
 gem 'paperclip'
 gem 'kaminari'
+# gem 'will_paginate'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 
@@ -45,14 +48,13 @@ gem 'mousetrap-rails'
 gem 'coderay'
 
 
-
-# #debug
+#debug
 gem 'better_errors'
 gem 'pry'
 gem 'pry-rails'
 gem 'pry-stack_explorer'
 
-# #test
+#test
 gem 'rspec-rails'
 gem 'simplecov', :require => false
 gem 'simplecov-rcov', :require => false
@@ -71,6 +73,9 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'meta_table', path: '/home/ruba/rails/meta_table/'
+# gem 'meta_table', :git => "https://github.com/ruba-ruba/meta_table"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

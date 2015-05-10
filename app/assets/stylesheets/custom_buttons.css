@@ -1,0 +1,50 @@
+/* Layout */
+/* -------------- */
+.custom-button {
+  position: relative;
+  margin: 0;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 2.8px;
+  padding-bottom: 2.8px;
+  background: #07565d;
+  color: #ffffff;
+  font-size: 14px;
+}
+.custom-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+.custom-button:hover {
+  background: #884444;
+  color: white;
+}
+/* Arrow custom-buttons */
+/* ------------- */
+.next::after,
+.prev::after {
+  border-style: solid;
+}
+/* Next custom-button */
+/* ----------- */
+.next::after {
+  right: -22px;
+  border-width: 11px;
+  border-color: transparent transparent transparent #07565d;
+}
+.next:hover::after {
+  border-left-color: #884444;
+}
+/* Prev custom-button */
+/* ----------- */
+.prev::after {
+  left: -22px;
+  border-color: transparent #07565d transparent transparent;
+  border-width: 11px;
+}
+.prev:hover::after {
+  border-right-color: #884444;
+}

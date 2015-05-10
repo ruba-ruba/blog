@@ -8,7 +8,7 @@
       = a.file_field :file
       = a.input :target, as: :select, :collection => Post::ATTACHMENT_TYPES, include_blank: false
     = f.input :content_type, as: :select, :collection => Post::POST_TYPES, include_blank: false
-    = f.input :tag_list, :hint => 'Comma separated'
+    / = f.input :tag_list, :hint => 'Comma separated'
     - for hub in Hub.all
       = check_box_tag "post[hub_ids][]", hub.id, @post.hubs.include?(hub)
       = hub.title
