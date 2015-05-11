@@ -16,6 +16,9 @@
 //= require jquery-ui
 //= require jquery.cookie
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require foundation
 //= #require ckeditor/override
 //= require ckeditor/init

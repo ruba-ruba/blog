@@ -44,7 +44,6 @@ class ApplicationController < ActionController::Base
   #   { :locale => I18n.locale == I18n.default_locale ? nil : I18n.locale  }
   # end
 
-
   def show_header?
     # %w(posts hubs).include?(controller_name) && %w(index show search).include?(action_name) 
     #todo investigate another way to do this shit

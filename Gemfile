@@ -28,6 +28,8 @@ gem 'sprockets-rails'
 gem 'inherited_resources'
 gem 'has_scope'
 
+# js
+gem 'react-rails', '~> 1.0'
 
 gem 'thin'
 gem 'slim-rails'

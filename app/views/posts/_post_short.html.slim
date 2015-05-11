@@ -28,3 +28,8 @@ div class=(dom_id(post)) class=(cycle("left", "right"))
           / = link_to "<i class='fi-pricetag-multiple'></i> #{t}".html_safe, tag_path(t)
     = link_to type_title(post), post_path(post), class: 'read_post_link'
   .clearfix
+
+div class=(dom_id(post)) class=(cycle("left", "right"))
+  = react_component('ShortPost',
+                    {:id => post.id, :title => post.title, :description => post.description, :content => post.content, :logo => post.logo},
+                    {:prerender => true})

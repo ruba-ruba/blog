@@ -2,7 +2,7 @@ div class=(dom_id(post))
   .head
     .short_info.left
       .info
-        | Categories: 
+        | Categories:
         - post.hubs.each do |hub|
           = link_to hub.title, hub_path(hub)
       .created.right
@@ -23,3 +23,5 @@ div class=(dom_id(post))
     - if @post.next
       .right= link_to 'next', post_path(@post.next), class: 'custom-button next'
   .clearfix
+
+= react_component('Post', {:title => @post.title, :content => @post.content}, {:prerender => true})
