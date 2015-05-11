@@ -32,6 +32,5 @@
 
 
 = react_component('ShortPost',
-                  { side: cycle("left", "right"), id: post.id, title: post.title, description: post.description, content: post.content, 
-                    logo: post.logo, link: post_path(post), type_title: type_title(post), created_ago: created(post), views_count: post.views_count, hubs: post.hubs }, 
+                  { post: post, side: cycle("left", "right"), logo: post.logo, link: post_path(post), type_title: type_title(post), created_ago: created(post), hubs: post.hubs },
                   {:prerender => true})

@@ -29,15 +29,15 @@ var ShortPost = React.createClass({
 
   render: function() {
     return (
-      <div className={format_classes(this.props.id, this.props.side)}>
+      <div className={format_classes(this.props.post.id, this.props.side)}>
         <div className='logo'><img src={this.props.logo}/></div>
-        <div className='title'><a href={this.props.link}>{this.props.title}</a></div>
-        <div className='description'>{this.props.description}</div>
+        <div className='title'><a href={this.props.link}>{this.props.post.title}</a></div>
+        <div className='description'>{this.props.post.description}</div>
         <div className='info'>
           <div className='created'>
             <div className='left'>
               <span className='text'>
-                <i className='fi-eye'> {this.props.views_count} </i>
+                <i className='fi-eye'> {this.props.post.views_count} </i>
               </span>
               <a href={link_to_discuss_thread(this.props.link)}> count </a>
             </div>
@@ -52,7 +52,7 @@ var ShortPost = React.createClass({
           <div className='hubs'>
             <HubTitlePrefix/>
             {this.props.hubs.map(function(hub){
-              return <Hub title={hub.title} link={link_to_hub(hub)}/>;
+              return <Hub hub={hub} link={link_to_hub(hub)}/>;
             })}
           </div>
           <a href={this.props.link} className='read_post_link'>{this.props.type_title}</a>

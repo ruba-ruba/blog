@@ -10,7 +10,7 @@ var Hub = React.createClass({
         <a href={this.props.link}>
           <i className='fi-pencil'></i>
           &nbsp;
-          {this.props.title}
+          {this.props.hub.title}
         </a>
       </div>
     );
