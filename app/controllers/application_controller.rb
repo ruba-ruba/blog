@@ -40,9 +40,9 @@ class ApplicationController < ActionController::Base
     I18n.t('.base_title')
   end
 
-  def default_url_options(options={})
-    { :locale => I18n.locale == I18n.default_locale ? nil : I18n.locale  }
-  end
+  # def default_url_options(options={})
+  #   { :locale => I18n.locale == I18n.default_locale ? nil : I18n.locale  }
+  # end
 
 
   def show_header?
