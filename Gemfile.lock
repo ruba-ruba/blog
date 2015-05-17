@@ -3,7 +3,6 @@ PATH
   specs:
     meta_table (0.0.2.alpha)
       kaminari (~> 0.16.1)
-      rspec (~> 3.1.0)
       will_paginate (~> 3.0.7)
 
 GEM
