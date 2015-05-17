@@ -22,7 +22,7 @@ module PostsHelper
   def type_title(post)
     case post.content_type
     when 'Article'
-      'read'
+      I18n.t('posts.read')
     when 'Travel'
       'travel' 
     when 'Photo'

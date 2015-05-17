@@ -27,4 +27,6 @@ Blog::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   config.assets.logger = true
+
+  config.assets.raise_runtime_errors = true
 end

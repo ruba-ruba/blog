@@ -71,8 +71,8 @@ class ApplicationController < ActionController::Base
     "current_hub" if request.url.include?(path) || @post && @post.hubs.include?(Hub.find(path.split('/')[2]))
   end
 
-  def current_tab(path)
-    "current_tab" if request.url == path
+  def current_tab(path, *args)
+    "current_tab" if request.url == path || args.include?(request.url)
   end
 
   def local_request?
