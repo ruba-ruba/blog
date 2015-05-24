@@ -3,7 +3,7 @@ class Admin::PostsController < Admin::AdminController
   inherit_resources
   actions :all, :except => [:show, :index]
 
-  meta_table(:post, [{key: :id, label: 'Number'},
+  meta_table(:post, [ {key: :id, label: 'Number'},
                       {key: :title, searchable: true},
                       {key: :published, label: 'Shown?', display: false},
                       {key: :content, render_text: "<%= link_to type_title(record), post_path(record) %>"},
@@ -12,8 +12,8 @@ class Admin::PostsController < Admin::AdminController
                       {key: :hubs, label: 'Categories', render_text: "record.hubs.map(&:title).join(',')"},
                       {key: :user, label: "Created By Email"},
                       {key: :actions, render_text: [:show, [:edit, :admin],[:destroy, :admin],"<%= link_to record.title, post_path(record) %>"]}
-                     ],
-                    {:scope => 'published.desc', per_page: 4})
+                    ],
+                    {:scope => 'published.desc', per_page: 4, includes: [:hubs]})
 
   def index
     @table = render_posts_table
