@@ -22,6 +22,7 @@
 
 // files
 //= require main.js.coffee
+//= require meta_table
 
 $(function(){ $(document).foundation(); });
 

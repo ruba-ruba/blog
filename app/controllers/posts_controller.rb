@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
   impressionist actions: [:show]
   before_action :pass_data, only: [:articles, :travels, :photos]
-  
+
   def index
-    if params[:tag]
-      @posts = Post.includes(:hubs).published.tagged_with(params[:tag]).page(params[:page]).per(6)
-    else
-      @posts = Post.includes(:hubs).published.page(params[:page]).per(6)
-    end
-    render :stream => true
+    @posts = Post.includes(:hubs, :attachments).published
+    @posts =
+      if params[:tag]
+        @posts.tagged_with(params[:tag]).page(params[:page]).per(6)
+      else
+        @posts.page(params[:page]).per(6)
+      end
   end
 
   def articles
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
 
   def pass_data
     scope = params[:action]
-    @posts = Post.includes(:hubs).send(scope.to_sym).published.page(params[:page]).per(6)
+    @posts = Post.includes(:hubs, :attachments).published.send(scope.to_sym).page(params[:page]).per(6)
   end
 
   def show
@@ -39,6 +40,10 @@ class PostsController < ApplicationController
   def autocomplete
     posts = Post.published.search(params[:term]).page(params[:page]).map{|p| p.title[0..18]}
     render :json => posts
+  end
+
+  private
+  def accessiable_posts
   end
 
 end

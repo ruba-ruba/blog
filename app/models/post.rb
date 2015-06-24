@@ -13,13 +13,12 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :attachments
  
   published('posts')
-  # default_scope { order('created_at desc') }
-  scope :desc, -> {order("posts.created_at DESC")} 
-  scope :articles,  -> { where(content_type: 'Article') }
-  scope :travels,  -> { where(content_type: 'Travel') }
-  scope :photos,  -> { where(content_type: 'Photo') }
-  scope :last_month, ->{ where('created_at >= ?', 1.month.ago)}
-  scope :last_year, ->{ where('created_at >= ?', 1.year.ago)}
+  scope :desc,       -> { order("posts.created_at DESC") }
+  scope :articles,   -> { where(content_type: 'Article') }
+  scope :travels,    -> { where(content_type: 'Travel')  }
+  scope :photos,     -> { where(content_type: 'Photo')   }
+  scope :last_month, -> { where('created_at >= ?', 1.month.ago)}
+  scope :last_year,  -> { where('created_at >= ?', 1.year.ago) }
 
 
   validates :title, presence: true
