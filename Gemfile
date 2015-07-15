@@ -15,8 +15,11 @@ gem 'sass-rails', '4.0.3'
 gem 'quiet_assets', group: :development
 gem "bullet",       group: :development
 gem 'compass-rails'
+
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
+gem 'foundation'
+
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
