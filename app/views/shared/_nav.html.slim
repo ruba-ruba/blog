@@ -1,5 +1,5 @@
 .nav
   ul.button-group
-    li= link_to '|||', '', class: 'button'
+    li= react_component('LinkToLeftSidebar', {class_name: 'button'})
     li= link_to I18n.t('.nav.links.all_articles'), articles_posts_path, class: "#{current_tab(articles_posts_url, root_url)} button"
     li.search= render 'shared/search'
