@@ -39,7 +39,6 @@ var LeftSidebar = React.createClass({
     },
 
     clicked: function(index){
-        console.log(this.state.focused);
       this.setState({focused: index});
     },
 
