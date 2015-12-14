@@ -44,7 +44,7 @@ var LeftSidebar = React.createClass({
 
     render: function () {
         var self = this;
-        var style = this.state.focused;
+        var style = this.state.focused + " left_sidebar";
 
         return (
             <div className={style} onClick={self.clicked.bind(self, self.state.focused)}>
