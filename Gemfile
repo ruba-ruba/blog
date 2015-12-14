@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'jquery-cookie-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
 gem 'jquery-ui-rails', '~> 5.0.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'sass-rails', '~> 5.0.4'
 gem 'quiet_assets', group: :development
 gem "bullet",       group: :development
@@ -29,7 +29,7 @@ gem 'inherited_resources'
 gem 'has_scope'
 
 # js
-gem 'react-rails', '~> 1.0'
+gem 'react-rails', '~> 1.5'
 
 gem 'thin'
 gem 'slim-rails'
