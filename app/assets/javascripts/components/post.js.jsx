@@ -20,10 +20,10 @@ var ShortPost = React.createClass({
     id: React.PropTypes.number,
     title: React.PropTypes.string,
     link: React.PropTypes.string,
-    logo: React.PropTypes.text,
+    logo: React.PropTypes.string,
     description: React.PropTypes.string,
     type_title: React.PropTypes.string,
-    hubs: React.PropTypes.instanceOf(Hub),
+    hubs: React.PropTypes.arrayOf(Hub),
     views_count: React.PropTypes.number
   },
 
