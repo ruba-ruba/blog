@@ -109,7 +109,7 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.2)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.4)
     execjs (2.2.1)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
