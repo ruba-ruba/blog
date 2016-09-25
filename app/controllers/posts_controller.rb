@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  impressionist actions: [:show]
+  # impressionist actions: [:show]
   before_action :pass_data, only: [:articles, :travels, :photos]
 
   def index
@@ -41,9 +41,4 @@ class PostsController < ApplicationController
     posts = Post.published.search(params[:term]).page(params[:page]).map{|p| p.title[0..18]}
     render :json => posts
   end
-
-  private
-  def accessiable_posts
-  end
-
 end

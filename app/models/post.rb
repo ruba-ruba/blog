@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   include BlogMethods
-  is_impressionable :counter_cache => true, :column_name => :views_count
+  is_impressionable counter_cache: true, column_name: :views_count
   acts_as_taggable_on :skills
 
   POST_TYPES       = %w(Article Travel Photo Code)
