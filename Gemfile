@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.16'
 gem 'rails-i18n'
 # gem 'pg'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.13'
 
 #defaults
 gem 'jquery-rails'
@@ -11,13 +11,14 @@ gem 'jquery-cookie-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'sass-rails', '4.0.3'
+gem 'sass-rails', '~> 5.0.4'
 gem 'quiet_assets', group: :development
 gem "bullet",       group: :development
-gem 'compass-rails'
+gem 'compass-rails', '~> 2.0.5'
 
-gem 'foundation-icons-sass-rails'
-gem 'foundation-rails'
+
+gem 'foundation-icons-sass-rails', '~> 3.0.0'
+gem 'foundation-rails', '~> 5.5.3.2'
 gem 'foundation'
 
 gem 'uglifier', '>= 1.3.0'
@@ -30,7 +31,7 @@ gem 'has_scope'
 
 
 gem 'thin'
-gem 'slim-rails'
+gem 'slim-rails', '3.1.1'
 gem 'awesome_print'
 gem 'simple_form'
 gem 'devise'

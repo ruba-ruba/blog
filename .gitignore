@@ -15,6 +15,5 @@
 /log/*.log
 /tmp
 
-.ruby-version
 /public/system
 /public/ckeditor_assets/
