@@ -30,17 +30,17 @@ gem 'inherited_resources'
 gem 'has_scope'
 
 
-gem 'thin'
+gem 'thin', '1.7.0'
 gem 'slim-rails', '3.1.1'
 gem 'awesome_print'
 gem 'simple_form'
-gem 'devise'
+gem 'devise', '4.2.0'
 gem "cancan"
 gem "rolify"
 gem 'ancestry'
 gem 'ckeditor', '~> 4.1.0'
 gem 'paperclip'
-gem 'kaminari'
+gem 'kaminari', '0.16.3'
 # gem 'will_paginate'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
@@ -60,7 +60,7 @@ gem 'pry-rails'
 gem 'pry-stack_explorer'
 
 #test
-gem 'rspec-rails'
+gem 'rspec-rails', '3.5.2'
 gem 'simplecov', :require => false
 gem 'simplecov-rcov', :require => false
 gem 'capybara'
