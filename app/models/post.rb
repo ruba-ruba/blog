@@ -1,5 +1,10 @@
+require 'elasticsearch/model'
+
 class Post < ActiveRecord::Base
+  include Elasticsearch::Model
+  # include Elasticsearch::Model::Callbackss
   include BlogMethods
+
   is_impressionable counter_cache: true, column_name: :views_count
   acts_as_taggable_on :skills
 

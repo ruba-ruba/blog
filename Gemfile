@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.16'
-gem 'rails-i18n'
-# gem 'pg'
+gem 'rails', '4.2.7'
+gem 'rails-i18n', '4.0.9'
 gem 'mysql2', '~> 0.3.13'
 
-#defaults
 gem 'jquery-rails'
 gem 'jquery-cookie-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
@@ -41,7 +39,6 @@ gem 'ancestry'
 gem 'ckeditor', '~> 4.1.0'
 gem 'paperclip'
 gem 'kaminari', '0.16.3'
-# gem 'will_paginate'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 
@@ -90,3 +87,8 @@ gem 'meta_table', path: '/home/ruba/rails/meta_table/'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
+
+
+# search
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
